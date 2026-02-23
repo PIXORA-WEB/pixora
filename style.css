@@ -31,7 +31,6 @@ a {
   background: rgba(0,0,0,0.65);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  position: relative;
 }
 
 .logo {
@@ -39,7 +38,8 @@ a {
   font-weight: 700;
   letter-spacing: 0.5px;
   background: linear-gradient(90deg, #00aaff, #00ff9c, #ff8c00, #ff3c3c);
-  -webkit-background-clip: text;
+  background-clip: text;            
+  -webkit-background-clip: text;    
   -webkit-text-fill-color: transparent;
 }
 
@@ -51,9 +51,9 @@ a {
 }
 
 .brand-logo {
-  height: 32px;      /* adjust: 32–44px usually perfect */
+  height: 32px;    
   width: auto;
-  max-width: 180px;  /* prevents huge wide logos */
+  max-width: 180px; 
   display: block;
   object-fit: contain;
 }
@@ -858,7 +858,8 @@ a {
   font-size: 22px;
   font-weight: 700;
   background: linear-gradient(90deg, #00aaff, #00ff9c, #ff8c00, #ff3c3c);
-  -webkit-background-clip: text;
+  background-clip: text;            
+  -webkit-background-clip: text;    
   -webkit-text-fill-color: transparent;
 }
 
@@ -906,7 +907,7 @@ a {
   max-width: 40ch;
 }
 
-.instagram-btn {
+.social-btn {
   display: inline-block;
   padding: 12px 18px;
   border-radius: 14px;
@@ -918,9 +919,10 @@ a {
   border: 1px solid rgba(255,255,255,0.12);
   backdrop-filter: blur(8px);
   transition: transform 0.2s ease, background 0.2s ease;
+  margin-bottom: 10px;
 }
 
-.instagram-btn:hover {
+.social-btn:hover {
   transform: translateY(-2px);
   background: rgba(255,255,255,0.1);
 }
@@ -1324,4 +1326,44 @@ a {
   .other-services {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================
+   LEGAL
+========================= */
+
+.legal-page {
+  padding: 90px 20px;
+}
+
+.legal-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.legal-container h1 {
+  margin: 14px 0 10px;
+}
+
+.legal-meta {
+  opacity: 0.75;
+  margin-bottom: 24px;
+}
+
+.legal-container h2 {
+  margin-top: 34px;
+  margin-bottom: 10px;
+}
+
+.legal-container p,
+.legal-container li {
+  line-height: 1.7;
+}
+
+.legal-container ul {
+  padding-left: 18px;
+}
+
+.legal-back {
+  margin-top: 36px;
 }
