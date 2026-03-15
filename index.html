@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>PIXORA | Web Developer for English-Speaking Businesses in Spain</title>
-    <meta name="description" content="PIXORA builds fast, modern websites using clean HTML, CSS and JavaScript for English-speaking businesses in Spain and remotely. Performance-focused, responsive and professionally structured.">
+  <title>PIXORA | Web Development for English-Speaking Businesses in Spain</title>
+  <meta
+    name="description"
+    content="PIXORA builds fast, modern websites for English-speaking businesses in Spain. Clean code, responsive design, SEO-friendly structure and performance-focused web development."
+  />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="PIXORA | Modern Web Development">
-    <meta property="og:description" content="Clean, fast websites built with HTML, CSS & JavaScript for English-speaking businesses in Spain and beyond.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pixora.es">
-    <meta property="og:image" content="https://pub-d1d51fae323946b3becfc26ede08e023.r2.dev/images/pixora-preview.png">
+  <link rel="canonical" href="https://pixora.es/" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:title" content="PIXORA | Web Development for English-Speaking Businesses in Spain" />
+  <meta property="og:description" content="Fast, modern websites with clean code, responsive design and SEO-friendly structure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixora.es/" />
+  <meta property="og:image" content="https://pixora.es/images/pixora-preview.png" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://pixora.es/" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PIXORA | Web Development for English-Speaking Businesses in Spain" />
+  <meta name="twitter:description" content="Fast, modern websites with clean code, responsive design and SEO-friendly structure." />
+  <meta name="twitter:image" content="https://pixora.es/images/pixora-preview.png" />
 
-    <!-- Open Graph (Facebook/LinkedIn/WhatsApp previews) -->
-    <meta property="og:title" content="PIXORA | Modern Web Development" />
-    <meta property="og:description" content="Clean, modern websites built with HTML, CSS & JavaScript — performance-focused and responsive. Based in Spain, working locally and remotely." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pixora.es/" />
-    <!-- Optional: add an image once you have one -->
-    <!-- <meta property="og:image" content="https://pixora.es/images/og-image.jpg" /> -->
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
 
-    <!-- Twitter / X preview -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PIXORA | Modern Web Development" />
-    <meta name="twitter:description" content="Clean, responsive websites built with HTML, CSS & JavaScript. Based in Spain, working locally and remotely." />
-    <!-- Optional -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <!-- Poppins Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "PIXORA",
+    "url": "https://pixora.es/",
+    "logo": "https://pixora.es/images/pixora-logo.png",
+    "image": "https://pixora.es/images/pixora-preview.png",
+    "email": "hello@pixora.es",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "La Línea de la Concepción",
+      "addressRegion": "Cádiz",
+      "addressCountry": "ES"
+    },
+    "description": "PIXORA builds fast, modern websites for English-speaking businesses in Spain and is also developing digital apps under the PIXORA brand.",
+    "sameAs": [
+      "https://instagram.com/pixora.es",
+      "https://www.facebook.com/profile.php?id=61588369813221"
+    ]
+  }
+  </script>
+</head>
 
 <body>
-
   <header class="header" id="top">
-
-    <a href="#top" class="brand">
-      <img src="https://pub-d1d51fae323946b3becfc26ede08e023.r2.dev/images/pixora-logo.png" alt="PIXORA logo" class="logo-img">
+    <a href="#top" class="brand" aria-label="Go to top of PIXORA website">
+      <img src="/images/pixora-logo.png" alt="PIXORA logo" class="logo-img" />
     </a>
 
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
@@ -59,365 +79,423 @@
     <nav class="nav" id="navMenu">
       <a href="#about">About</a>
       <a href="#pricing">Pricing</a>
+      <a href="#products">Products</a>
       <a href="#contact">Contact</a>
     </nav>
-
   </header>
 
-  <!-- HERO -->
-  <section id="top" class="hero">
-    <div class="hero-inner">
-      <h1>Modern websites for English-speaking businesses in Spain.</h1>
-      <p>
-        Built with structured HTML, CSS and JavaScript for performance, clarity and long-term scalability.
-      </p>
-
-      <div class="hero-cta">
-        <a class="btn-gradient" href="#pricing">View Packages</a>
-        <a class="btn-ghost" href="#contact">Get a Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="about-grid">
-      <div class="about-card">
-        <div class="tag">About PIXORA</div>
-
-        <h2>Modern web development focused on clean code and performance.</h2>
-
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Web development for English-speaking businesses in Spain.</h1>
         <p>
-          PIXORA builds modern websites using HTML, CSS and JavaScript — with a focus on
-          clarity, speed and responsive design. Every project is structured carefully,
-          built cleanly and designed to convert.
+          PIXORA builds fast, modern websites with structured HTML, CSS and JavaScript
+          for performance, clarity and long-term scalability. Alongside client projects,
+          PIXORA is also developing original digital apps under the brand.
         </p>
 
-        <p>
-          As PIXORA builds its portfolio, we’re offering structured introductory pricing
-          for selected projects — without compromising on standards, communication or
-          long-term scalability.
-        </p>
-
-        <p class="about-location">
-          Based in La Línea de la Concepción, supporting English-speaking businesses across Spain and remotely.
-        </p>
-      </div>
-
-      <div class="about-panels">
-        <div class="panel">
-          <h3>What I build</h3>
-          <ul>
-            <li>Landing pages for leads & enquiries</li>
-            <li>Business sites with clean navigation</li>
-            <li>Responsive design for all devices</li>
-            <li>SEO-friendly structure and performance</li>
-          </ul>
+        <div class="hero-cta">
+          <a class="btn-gradient" href="#pricing">View Packages</a>
+          <a class="btn-ghost" href="#contact">Get a Quote</a>
         </div>
+      </div>
+    </section>
 
-        <div class="panel accent">
-          <h3>How it works</h3>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="tag">About PIXORA</div>
+
+          <h2>Modern web development focused on clean code, performance and clarity.</h2>
+
           <p>
-            Discovery → design → build → launch.
-            Clear communication, quick turnaround and a clean handover.
+            PIXORA builds modern websites using HTML, CSS and JavaScript, with a focus on
+            speed, responsive design and SEO-friendly structure. Every project is built cleanly,
+            carefully structured and designed to support real business goals.
           </p>
-          <a class="panel-cta" href="#pricing">See packages →</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- FULL WIDTH STATS ROW -->
-    <div class="about-stats">
-      <div class="stat">
-        <span class="stat-icon">⚡</span>
-        <div>
-          <strong>Performance-focused</strong>
-          <small>Fast, responsive builds</small>
-        </div>
-      </div>
+          <p>
+            Alongside web development services, PIXORA is also developing digital apps under
+            the brand, including PIXORA Finance Lite and PIXORA Play.
+          </p>
 
-      <div class="stat">
-        <span class="stat-icon">🧩</span>
-        <div>
-          <strong>Clean code</strong>
-          <small>Structured HTML, CSS & JS</small>
-        </div>
-      </div>
-
-      <div class="stat">
-        <span class="stat-icon">🎯</span>
-        <div>
-          <strong>Conversion aware</strong>
-          <small>Built with clear goals in mind</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="pricing">
-    <div class="pricing-inner">
-      <div class="pricing-head">
-        <div class="tag">Pricing</div>
-        <h2>Structured packages for serious, performance-focused builds.</h2>
-        <p>
-          Transparent pricing designed for English-speaking businesses in Spain and remotely.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- BASIC -->
-        <article class="price-card">
-          <div class="price-top">
-            <h3>Basic</h3>
-            <div class="price">€200</div>
-            <div class="price-sub">Landing Page</div>
-          </div>
-
-          <ul class="price-list">
-            <li>1-page landing website</li>
-            <li>Mobile responsive</li>
-            <li>Hero + About + Services + Contact</li>
-            <li>Basic SEO structure</li>
-            <li>1 revision</li>
-          </ul>
-
-          <div class="price-actions">
-            <button class="btn-gradient" data-open-questionnaire="basic">Get Questionnaire</button>
-            <a class="btn-ghost" href="#contact">Enquire</a>
-          </div>
-        </article>
-
-        <!-- STANDARD -->
-        <article class="price-card featured">
-          <div class="badge">Most popular</div>
-          <div class="price-top">
-            <h3>Standard</h3>
-            <div class="price">€600</div>
-            <div class="price-sub">Up to 5 Pages</div>
-          </div>
-
-          <ul class="price-list">
-            <li>Up to 5 pages total</li>
-            <li>Navigation + site structure</li>
-            <li>Responsive design across devices</li>
-            <li>On-page SEO foundations</li>
-            <li>2 revisions</li>
-          </ul>
-
-          <div class="price-actions">
-            <button class="btn-gradient" data-open-questionnaire="standard">Get Questionnaire</button>
-            <a class="btn-ghost" href="#contact">Enquire</a>
-          </div>
-        </article>
-
-        <!-- PROFESSIONAL -->
-        <article class="price-card">
-          <div class="price-top">
-            <h3>Professional</h3>
-            <div class="price">€1100</div>
-            <div class="price-sub">Up to 10 Pages</div>
-          </div>
-
-          <ul class="price-list">
-            <li>Up to 10 pages total</li>
-            <li>Advanced UI polish</li>
-            <li>Performance optimisation pass</li>
-            <li>SEO structure + scalability focus</li>
-            <li>3 revisions</li>
-          </ul>
-
-          <div class="price-actions">
-            <button class="btn-gradient" data-open-questionnaire="pro">Get Questionnaire</button>
-            <a class="btn-ghost" href="#contact">Enquire</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="founding-badge">
-        <strong>Founding Client Opportunity:</strong>
-        A limited number of introductory portfolio projects are currently available.
-      </div>
-
-      <!-- OTHER SERVICES ROW -->
-      <div class="other-services">
-        <div class="other-card">
-          <h4>Redesign</h4>
-          <p>Refresh an existing site or landing page with a modern layout, cleaner UX and better mobile.</p>
-          <div class="other-meta">From <strong>€350</strong></div>
+          <p class="about-location">
+            Based in La Línea de la Concepción, supporting English-speaking businesses across Spain and remotely.
+          </p>
         </div>
 
-        <div class="other-card">
-          <h4>Custom</h4>
-          <p>Custom builds or extra functionality. Quoted based on scope, features and timeline.</p>
-          <div class="other-meta">From <strong>€900</strong></div>
-        </div>
-
-        <div class="other-card">
-          <h4>WordPress (Optional)</h4>
-          <p>Available if you already have hosting + domain ready. Ideal if you need easy content editing.</p>
-          <div class="other-meta">Add-on <strong>+€150</strong></div>
-        </div>
-      </div>
-
-      <div class="pricing-helper">
-        For <strong>Redesign</strong>, <strong>Custom builds</strong> or <strong>WordPress</strong>, use the
-        <a href="#contact">contact form</a> and I’ll quote based on your requirements.
-      </div>
-      
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="contact-shell">
-      <div class="contact-left">
-        <div class="tag">Contact</div>
-        <h2>Let’s build a modern website that works for your business.</h2>
-        <p>
-          Send details below and I’ll reply with next steps. The more info you provide,
-          the quicker I can quote and start.
-        </p>
-
-        <div class="contact-highlights">
-          <div class="highlight">
-            <span class="dot"></span>
-            <div>
-              <strong>Fast turnaround</strong>
-              <small>Clear timelines & delivery</small>
-            </div>
+        <div class="about-panels">
+          <div class="panel">
+            <h3>What I build</h3>
+            <ul>
+              <li>Landing pages for leads and enquiries</li>
+              <li>Business websites with clear navigation</li>
+              <li>Responsive websites for desktop, tablet and mobile</li>
+              <li>SEO-friendly structure and performance-focused builds</li>
+            </ul>
           </div>
 
-          <div class="highlight">
-            <span class="dot"></span>
-            <div>
-              <strong>Mobile-first design</strong>
-              <small>Responsive across devices</small>
-            </div>
-          </div>
-
-          <div class="highlight">
-            <span class="dot"></span>
-            <div>
-              <strong>Clean code</strong>
-              <small>HTML, CSS & JavaScript builds</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-direct">
-          <div class="contact-pill">
-            <span>📧</span>
-            <div>
-              <small>Email</small>
-              <strong>hello@pixora.es</strong>
-            </div>
-          </div>
-
-          <div class="contact-pill">
-            <span>📍</span>
-            <div>
-              <small>Location</small>
-              <strong>La Línea de la Concepción</strong>
-            </div>
+          <div class="panel accent">
+            <h3>How it works</h3>
+            <p>
+              Discovery → design → build → launch.
+              Clear communication, efficient delivery and a clean handover.
+            </p>
+            <a class="panel-cta" href="#pricing">See packages →</a>
           </div>
         </div>
       </div>
 
-      <form class="contact-form-wide" method="POST" action="https://formspree.io/f/mdallwyw">
-        <input type="hidden" name="_subject" value="New Pixora Website Enquiry">
-
-        <div class="form-head">
-          <h3>Project details</h3>
-          <p>Fill in what you can — the more detail, the better the result.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="field">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name" required />
-          </div>
-
-          <div class="field">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@email.com" required />
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-icon">⚡</span>
+          <div>
+            <strong>Performance-focused</strong>
+            <small>Fast, responsive builds</small>
           </div>
         </div>
 
-        <div class="grid-2">
-          <div class="field">
-            <label>Business Name</label>
-            <input type="text" name="business" placeholder="Your business / brand name" />
+        <div class="stat">
+          <span class="stat-icon">🧩</span>
+          <div>
+            <strong>Clean code</strong>
+            <small>Structured HTML, CSS &amp; JS</small>
           </div>
+        </div>
 
-          <div class="field custom-select">
-            <label>Package</label>
+        <div class="stat">
+          <span class="stat-icon">🎯</span>
+          <div>
+            <strong>Business-focused</strong>
+            <small>Built around clear commercial goals</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="select-wrap">
-              <div class="select-trigger">
-                <span>Select a package</span>
-                <div class="select-arrow"></div>
-              </div>
+    <!-- PRICING -->
+    <section id="pricing" class="pricing">
+      <div class="pricing-inner">
+        <div class="pricing-head">
+          <div class="tag">Pricing</div>
+          <h2>Structured packages for serious, performance-focused builds.</h2>
+          <p>
+            Transparent pricing designed for English-speaking businesses in Spain and remotely.
+          </p>
+        </div>
 
-              <div class="select-options">
-                <div class="option" data-value="Basic">Basic</div>
-                <div class="option" data-value="Standard">Standard</div>
-                <div class="option" data-value="Professional">Professional</div>
-                <div class="option" data-value="Redesign">Redesign</div>
-                <div class="option" data-value="Custom">Custom</div>
-                <div class="option" data-value="WordPress (Optional)">WordPress (Optional)</div>
-              </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Basic</h3>
+              <div class="price">€200</div>
+              <div class="price-sub">Landing Page</div>
             </div>
 
-            <input type="hidden" name="package" />
+            <ul class="price-list">
+              <li>1-page landing website</li>
+              <li>Mobile responsive</li>
+              <li>Hero + About + Services + Contact</li>
+              <li>Basic SEO structure</li>
+              <li>1 revision</li>
+            </ul>
+
+            <div class="price-actions">
+              <button class="btn-gradient" data-open-questionnaire="basic">Get Questionnaire</button>
+              <a class="btn-ghost" href="#contact">Enquire</a>
+            </div>
+          </article>
+
+          <article class="price-card featured">
+            <div class="badge">Most popular</div>
+            <div class="price-top">
+              <h3>Standard</h3>
+              <div class="price">€600</div>
+              <div class="price-sub">Up to 5 Pages</div>
+            </div>
+
+            <ul class="price-list">
+              <li>Up to 5 pages total</li>
+              <li>Navigation + site structure</li>
+              <li>Responsive design across devices</li>
+              <li>On-page SEO foundations</li>
+              <li>2 revisions</li>
+            </ul>
+
+            <div class="price-actions">
+              <button class="btn-gradient" data-open-questionnaire="standard">Get Questionnaire</button>
+              <a class="btn-ghost" href="#contact">Enquire</a>
+            </div>
+          </article>
+
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Professional</h3>
+              <div class="price">€1100</div>
+              <div class="price-sub">Up to 10 Pages</div>
+            </div>
+
+            <ul class="price-list">
+              <li>Up to 10 pages total</li>
+              <li>Advanced UI polish</li>
+              <li>Performance optimisation pass</li>
+              <li>SEO structure + scalability focus</li>
+              <li>3 revisions</li>
+            </ul>
+
+            <div class="price-actions">
+              <button class="btn-gradient" data-open-questionnaire="pro">Get Questionnaire</button>
+              <a class="btn-ghost" href="#contact">Enquire</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="founding-badge">
+          <strong>Founding Client Opportunity:</strong>
+          A limited number of introductory portfolio projects are currently available.
+        </div>
+
+        <div class="other-services">
+          <div class="other-card">
+            <h4>Redesign</h4>
+            <p>Refresh an existing site or landing page with a modern layout, cleaner UX and better mobile performance.</p>
+            <div class="other-meta">From <strong>€350</strong></div>
           </div>
 
-          <div class="field custom-select">
-            <label>Budget range</label>
+          <div class="other-card">
+            <h4>Custom</h4>
+            <p>Custom builds or extra functionality. Quoted based on scope, features and timeline.</p>
+            <div class="other-meta">From <strong>€900</strong></div>
+          </div>
 
-            <div class="select-wrap">
-              <div class="select-trigger">
-                <span>Select budget range</span>
-                <div class="select-arrow"></div>
-              </div>
+          <div class="other-card">
+            <h4>WordPress (Optional)</h4>
+            <p>Available if you already have hosting and domain ready. Ideal if you need easier content editing.</p>
+            <div class="other-meta">Add-on <strong>+€150</strong></div>
+          </div>
+        </div>
 
-              <div class="select-options">
-                <div class="option" data-value="€150–€300">€150 – €300</div>
-                <div class="option" data-value="€300–€700">€300 – €700</div>
-                <div class="option" data-value="€700–€1500">€700 – €1500</div>
-                <div class="option" data-value="€1500+">€1500+</div>
+        <div class="pricing-helper">
+          For <strong>Redesign</strong>, <strong>Custom builds</strong> or <strong>WordPress</strong>, use the
+          <a href="#contact">contact form</a> and I’ll quote based on your requirements.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products">
+      <div class="pricing-inner">
+        <div class="pricing-head">
+          <div class="tag">Products</div>
+          <h2>Apps being developed under the PIXORA brand.</h2>
+          <p>
+            Alongside web development services, PIXORA is also building focused digital apps designed
+            around practicality, usability and long-term growth.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-status">Coming Soon</div>
+            <h3>PIXORA Finance Lite</h3>
+            <p>
+              A finance app for self-employed professionals and freelancers, designed to help users
+              track revenue, expenses, cash position and key financial information with greater clarity.
+            </p>
+
+            <br>
+
+            <ul class="product-feature-list">
+              <li>Dashboard</li>
+              <li>Transactions</li>
+              <li>Cash Overview</li>
+              <li>P&amp;L</li>
+              <li>Balance Sheet</li>
+            </ul>
+
+            <a class="panel-cta" href="/pixora-finance-lite.html">Learn more →</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-status">Coming Soon</div>
+            <h3>PIXORA Play</h3>
+            <p>
+              A children’s app beginning with digital colouring activities, with future plans to expand
+              into doodling, puzzles and other creative features over time.
+            </p>
+
+            <br>
+
+            <ul class="product-feature-list">
+              <li>Colouring</li>
+              <li>Creativity</li>
+              <li>Doodling</li>
+              <li>Puzzles</li>
+              <li>Future Updates</li>
+            </ul>
+
+            <a class="panel-cta" href="/pixora-play.html">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="contact-shell">
+        <div class="contact-left">
+          <div class="tag">Contact</div>
+          <h2>Let’s build a modern website that works for your business.</h2>
+          <p>
+            Send details below and I’ll reply with next steps. You can also get in touch
+            regarding PIXORA Finance Lite or PIXORA Play.
+          </p>
+
+          <div class="contact-highlights">
+            <div class="highlight">
+              <span class="dot"></span>
+              <div>
+                <strong>Fast turnaround</strong>
+                <small>Clear timelines &amp; delivery</small>
               </div>
             </div>
 
-            <input type="hidden" name="budget" />
+            <div class="highlight">
+              <span class="dot"></span>
+              <div>
+                <strong>Mobile-first design</strong>
+                <small>Responsive across devices</small>
+              </div>
+            </div>
+
+            <div class="highlight">
+              <span class="dot"></span>
+              <div>
+                <strong>Clear communication</strong>
+                <small>Professional and straightforward process</small>
+              </div>
+            </div>
           </div>
 
-          <div class="field full-width">
-            <label>What do you need built?</label>
-            <textarea
-              name="message"
-              rows="8"
-              placeholder="Tell me about your business and what you want the website to look like."
-              required
-            ></textarea>
-          </div>
-          </div>
+          <div class="contact-direct">
+            <div class="contact-pill">
+              <span>📧</span>
+              <div>
+                <small>Email</small>
+                <strong><a href="mailto:hello@pixora.es">hello@pixora.es</a></strong>
+              </div>
+            </div>
 
-        <button class="btn-gradient" type="submit">Send enquiry</button>
-
-        <div class="form-foot">
-          Prefer email? Send details to <strong>hello@pixora.es</strong>
+            <div class="contact-pill">
+              <span>📍</span>
+              <div>
+                <small>Location</small>
+                <strong>La Línea de la Concepción</strong>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
+        <form class="contact-form-wide" method="POST" action="https://formspree.io/f/mdallwyw">
+          <input type="hidden" name="_subject" value="New PIXORA Website Enquiry" />
+
+          <div class="form-head">
+            <h3>Project details</h3>
+            <p>Fill in what you can — the more detail, the better the result.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="business">Business Name</label>
+              <input id="business" type="text" name="business" placeholder="Your business / brand name" />
+            </div>
+
+            <div class="field custom-select">
+              <label>Enquiry Type</label>
+
+              <div class="select-wrap">
+                <div class="select-trigger">
+                  <span>Select an option</span>
+                  <div class="select-arrow"></div>
+                </div>
+
+                <div class="select-options">
+                  <div class="option" data-value="Basic Website Package">Basic Website Package</div>
+                  <div class="option" data-value="Standard Website Package">Standard Website Package</div>
+                  <div class="option" data-value="Professional Website Package">Professional Website Package</div>
+                  <div class="option" data-value="Redesign">Redesign</div>
+                  <div class="option" data-value="Custom Website Build">Custom Website Build</div>
+                  <div class="option" data-value="WordPress">WordPress</div>
+                  <div class="option" data-value="PIXORA Finance Lite">PIXORA Finance Lite</div>
+                  <div class="option" data-value="PIXORA Play">PIXORA Play</div>
+                </div>
+              </div>
+
+              <input type="hidden" name="package" />
+            </div>
+
+            <div class="field custom-select">
+              <label>Budget range</label>
+
+              <div class="select-wrap">
+                <div class="select-trigger">
+                  <span>Select budget range</span>
+                  <div class="select-arrow"></div>
+                </div>
+
+                <div class="select-options">
+                  <div class="option" data-value="€150–€300">€150 – €300</div>
+                  <div class="option" data-value="€300–€700">€300 – €700</div>
+                  <div class="option" data-value="€700–€1500">€700 – €1500</div>
+                  <div class="option" data-value="€1500+">€1500+</div>
+                  <div class="option" data-value="Not Sure Yet">Not Sure Yet</div>
+                </div>
+              </div>
+
+              <input type="hidden" name="budget" />
+            </div>
+
+            <div class="field full-width">
+              <label for="message">What do you need?</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="8"
+                placeholder="Tell me about your business, website requirements, or your enquiry regarding PIXORA Finance Lite or PIXORA Play."
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="btn-gradient" type="submit">Send enquiry</button>
+
+          <div class="form-foot">
+            No-obligation quote. Prefer email? Send details to <strong>hello@pixora.es</strong>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-col">
-        <a href="#top" class="footer-brand">
-          <img src="https://pub-d1d51fae323946b3becfc26ede08e023.r2.dev/images/pixora-logo.png" alt="PIXORA logo" class="logo-img">
+        <a href="#top" class="footer-brand" aria-label="Go to top of PIXORA website">
+          <img src="/images/pixora-logo.png" alt="PIXORA logo" class="logo-img" />
         </a>
 
         <p class="footer-text">
@@ -431,52 +509,47 @@
         <h4>Company</h4>
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
+        <a href="#products">Products</a>
         <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="/pixora-finance-lite.html">PIXORA Finance Lite</a>
+        <a href="/pixora-play.html">PIXORA Play</a>
       </div>
 
       <div class="footer-col">
         <h4>Location</h4>
         <p class="footer-text">
-          Santa Margarita<br>
-          La Línea de la Concepción<br>
+          Santa Margarita<br />
+          La Línea de la Concepción<br />
           Spain 11300
         </p>
 
         <p class="footer-text">
-            <strong>Email:</strong> <a href="mailto:hello@pixora.es">hello@pixora.es</a>
-          </p>
-        </div>
+          <strong>Email:</strong> <a href="mailto:hello@pixora.es">hello@pixora.es</a>
+        </p>
 
-      <div class="footer-col">
-        <h4>Follow</h4>
-
-        <a class="social-btn"
-           href="https://instagram.com/pixora.es"
-           target="_blank"
-           rel="noopener">
+        <a class="social-btn" href="https://instagram.com/pixora.es" target="_blank" rel="noopener">
           Follow on Instagram
         </a>
 
-        <a class="social-btn"
-           href="https://www.facebook.com/profile.php?id=61588369813221"
-           target="_blank"
-           rel="noopener">
+        <a class="social-btn" href="https://www.facebook.com/profile.php?id=61588369813221" target="_blank" rel="noopener">
           Follow on Facebook
         </a>
       </div>
-
     </div>
-    
+
     <div class="footer-bottom">
       <span>© 2026 PIXORA. All rights reserved.</span>
       <span class="footer-mini-links">
-        <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms & Conditions</a>
+        <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms &amp; Conditions</a>
       </span>
     </div>
   </footer>
 
-
-<!-- QUESTIONNAIRE MODAL -->
+  <!-- QUESTIONNAIRE MODAL -->
   <div class="modal" id="questionnaireModal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
 
