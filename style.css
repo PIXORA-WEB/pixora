@@ -250,7 +250,7 @@ textarea:focus-visible,
 
 /* --- HERO --- */
 .hero {
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding: 0 80px;
@@ -1338,7 +1338,7 @@ textarea:focus-visible,
   }
 
   .hero {
-  min-height: 100vh;
+  min-height: 100svh;
   padding-top: 80px;
   padding-bottom: 80px;
 }
