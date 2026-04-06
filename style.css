@@ -1290,15 +1290,18 @@ select:focus-visible {
   }
 
   .hero {
-    min-height: 100svh;
-    padding-top: 90px;
-    padding-bottom: 90px;
+  min-height: 100svh;
+  padding-top: 90px;
+  padding-bottom: 90px;
   }
 
-  .hero h1,
-  .product-page-inner h1 {
-    font-size: 42px;
-  }
+.hero h1,
+.product-page-inner h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
 
   .about-card h2,
   .pricing-head h2,
@@ -1307,23 +1310,31 @@ select:focus-visible {
   }
 
   .hero p,
-  .product-lead {
-    font-size: 17px;
-  }
+.product-lead {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 36ch;
+  margin-bottom: 20px;
+}
 }
 
 @media (max-width: 600px) {
   .header,
   .hero,
-  .about,
-  .pricing,
-  .products,
-  .beta-section,
-  .contact,
   .product-page,
   .footer {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  /* 👉 ONLY reduce padding for homepage sections */
+  .about,
+  .pricing,
+  .products,
+  .beta-section,
+  .contact {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .hero h1,
@@ -1331,6 +1342,7 @@ select:focus-visible {
     font-size: 34px;
   }
 
+  /* Slightly tighter internal padding so cards feel bigger */
   .about-card,
   .panel,
   .price-card,
@@ -1338,7 +1350,18 @@ select:focus-visible {
   .contact-left,
   .contact-form-wide,
   .beta-form {
-    padding: 20px;
+    padding: 18px;
+  }
+
+  /* Reduce gaps so cards expand more */
+  .pricing-grid,
+  .products-grid,
+  .products-grid-3,
+  .other-services,
+  .about-stats,
+  .about-grid,
+  .contact-shell {
+    gap: 12px;
   }
 
   .about-card,
