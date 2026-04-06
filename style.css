@@ -1236,8 +1236,8 @@ select:focus-visible {
   .contact,
   .product-page,
   .footer {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .nav-toggle {
@@ -1323,26 +1323,40 @@ select:focus-visible {
   .hero,
   .product-page,
   .footer {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  /* 👉 ONLY reduce padding for homepage sections */
+  /* Homepage sections only */
   .about,
   .pricing,
   .products,
   .beta-section,
   .contact {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
+  /* Let homepage wrappers use full available width */
+  .pricing-inner,
+  .about-grid,
+  .about-stats,
+  .pricing-grid,
+  .other-services,
+  .products-grid,
+  .products-grid-3,
+  .contact-shell {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Hero text */
   .hero h1,
   .product-page-inner h1 {
-    font-size: 34px;
+    font-size: 30px;
   }
 
-  /* Slightly tighter internal padding so cards feel bigger */
+  /* Make cards feel wider */
   .about-card,
   .panel,
   .price-card,
@@ -1350,10 +1364,12 @@ select:focus-visible {
   .contact-left,
   .contact-form-wide,
   .beta-form {
-    padding: 18px;
+    width: 100%;
+    max-width: none;
+    padding: 16px;
   }
 
-  /* Reduce gaps so cards expand more */
+  /* Remove tighter layout feel */
   .pricing-grid,
   .products-grid,
   .products-grid-3,
@@ -1361,7 +1377,7 @@ select:focus-visible {
   .about-stats,
   .about-grid,
   .contact-shell {
-    gap: 12px;
+    gap: 10px;
   }
 
   .about-card,
@@ -1371,6 +1387,11 @@ select:focus-visible {
   .contact-form-wide,
   .beta-form {
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  }
+
+  .beta-form {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .grid-2 {
@@ -1389,6 +1410,13 @@ select:focus-visible {
   .social-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .hero-cta .btn-gradient,
+  .hero-cta .btn-ghost {
+    padding: 12px 14px;
+    font-size: 12px;
+    border-radius: 10px;
   }
 }
 
