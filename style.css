@@ -1229,15 +1229,31 @@ select:focus-visible {
 @media (max-width: 900px) {
   .header,
   .hero,
-  .about,
-  .pricing,
-  .products,
-  .beta-section,
-  .contact,
   .product-page,
   .footer {
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  .about,
+  .pricing,
+  .products,
+  .beta-section,
+  .contact {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .pricing-inner,
+  .about-grid,
+  .about-stats,
+  .pricing-grid,
+  .other-services,
+  .products-grid,
+  .products-grid-3,
+  .contact-shell {
+    width: 100%;
+    max-width: none;
   }
 
   .nav-toggle {
@@ -1290,18 +1306,18 @@ select:focus-visible {
   }
 
   .hero {
-  min-height: 100svh;
-  padding-top: 90px;
-  padding-bottom: 90px;
+    min-height: 100svh;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
-.hero h1,
-.product-page-inner h1 {
-  font-size: 34px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
+  .hero h1,
+  .product-page-inner h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
 
   .about-card h2,
   .pricing-head h2,
@@ -1310,12 +1326,12 @@ select:focus-visible {
   }
 
   .hero p,
-.product-lead {
-  font-size: 15px;
-  line-height: 1.5;
-  max-width: 36ch;
-  margin-bottom: 20px;
-}
+  .product-lead {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 36ch;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1327,17 +1343,15 @@ select:focus-visible {
     padding-right: 10px;
   }
 
-  /* Homepage sections only */
   .about,
   .pricing,
   .products,
   .beta-section,
   .contact {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 
-  /* Let homepage wrappers use full available width */
   .pricing-inner,
   .about-grid,
   .about-stats,
@@ -1350,13 +1364,11 @@ select:focus-visible {
     max-width: none;
   }
 
-  /* Hero text */
   .hero h1,
   .product-page-inner h1 {
     font-size: 30px;
   }
 
-  /* Make cards feel wider */
   .about-card,
   .panel,
   .price-card,
@@ -1367,9 +1379,9 @@ select:focus-visible {
     width: 100%;
     max-width: none;
     padding: 16px;
+    border-radius: 16px;
   }
 
-  /* Remove tighter layout feel */
   .pricing-grid,
   .products-grid,
   .products-grid-3,
@@ -1377,16 +1389,7 @@ select:focus-visible {
   .about-stats,
   .about-grid,
   .contact-shell {
-    gap: 10px;
-  }
-
-  .about-card,
-  .price-card,
-  .product-card,
-  .contact-left,
-  .contact-form-wide,
-  .beta-form {
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    gap: 8px;
   }
 
   .beta-form {
