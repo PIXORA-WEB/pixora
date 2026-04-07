@@ -1631,7 +1631,7 @@ select:focus-visible {
   }
 
   .hero-cta {
-    margin-top: 12px;
+    margin-top: 28px;
   }
 }
 
@@ -1768,5 +1768,15 @@ select:focus-visible {
 
   .legal-container h3 {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-helper {
+    max-width: 320px; /* controls text width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px; /* optional breathing room */
+    line-height: 1.6;
   }
 }
