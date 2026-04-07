@@ -2067,3 +2067,72 @@ main:not(.product-page):not(.legal-page)::after {
     animation: none;
   }
 }
+
+/* =========================================
+   MOBILE CARD WIDTH FIX V2
+   ========================================= */
+@media (max-width: 600px) {
+  .about-grid,
+  .about-panels,
+  .about-stats,
+  .pricing-grid,
+  .other-services,
+  .products-grid,
+  .products-grid-3,
+  .contact-shell,
+  .product-content,
+  .price-stack,
+  .contact-highlights,
+  .contact-direct,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card,
+  .panel,
+  .price-card,
+  .product-card,
+  .other-card,
+  .stat,
+  .founding-badge,
+  .contact-left,
+  .contact-form-wide,
+  .beta-form,
+  .mini-price,
+  .mini-price-card,
+  .contact-left .highlight,
+  .contact-left .contact-pill,
+  .product-hero-meta > *,
+  .other-services > *,
+  .about-stats > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .pricing-inner,
+  .product-page-inner,
+  .footer-inner,
+  .hero-inner {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .other-services,
+  .about-stats,
+  .pricing-grid,
+  .products-grid,
+  .products-grid-3,
+  .about-grid,
+  .about-panels,
+  .contact-shell,
+  .product-content,
+  .price-stack,
+  .grid-2 {
+    gap: 12px;
+  }
+}
