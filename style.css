@@ -254,6 +254,10 @@ select:focus-visible {
   padding-bottom: 40px;
 }
 
+.hero .tag {
+  display: none;
+}
+
 .hero h1 {
   font-size: 58px;
   line-height: 1.1;
@@ -263,7 +267,7 @@ select:focus-visible {
 .hero p {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.72);
-  margin-bottom: 34px;
+  margin-bottom: 40px;
   max-width: 62ch;
 }
 
@@ -271,6 +275,7 @@ select:focus-visible {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 /* --- ABOUT --- */
@@ -318,14 +323,15 @@ select:focus-visible {
 
 .about-card h2 {
   margin-top: 14px;
-  font-size: 40px;
-  line-height: 1.2;
+  font-size: 58px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .about-card p {
   margin-top: 16px;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 16px;
+  font-size: 20px;
   max-width: 62ch;
 }
 
@@ -474,13 +480,18 @@ select:focus-visible {
 
 .pricing-head h2 {
   margin-top: 14px;
-  font-size: 40px;
-  line-height: 1.2;
+  font-size: 58px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .pricing-head p {
   margin-top: 10px;
   color: rgba(255, 255, 255, 0.75);
+  font-size: 20px;
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pricing-grid {
@@ -880,14 +891,16 @@ select:focus-visible {
 
 .contact-left h2 {
   margin-top: 14px;
-  font-size: 42px;
-  line-height: 1.15;
+  font-size: 58px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .contact-left p {
   margin-top: 12px;
   color: rgba(255, 255, 255, 0.75);
-  max-width: 60ch;
+  max-width: 62ch;
+  font-size: 20px;
 }
 
 .contact-highlights,
@@ -1158,6 +1171,16 @@ select:focus-visible {
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
   gap: 28px;
   align-items: start;
+}
+
+.footer-col-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
 }
 
 .footer-col-contact {
@@ -1469,6 +1492,15 @@ select:focus-visible {
     text-align: center;
   }
 
+  .footer-col-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
   .footer-col a {
     margin-left: auto;
     margin-right: auto;
@@ -1574,25 +1606,32 @@ select:focus-visible {
   }
 
   .hero h1,
-  .product-page-inner h1 {
+  .product-page-inner h1,
+  .about-card h2,
+  .pricing-head h2,
+  .contact-left h2 {
     font-size: 34px;
     line-height: 1.2;
     letter-spacing: -0.02em;
     margin-bottom: 14px;
   }
 
-  .about-card h2,
-  .pricing-head h2,
-  .contact-left h2 {
-    font-size: 34px;
-  }
-
   .hero p,
-  .product-lead {
+  .product-lead,
+  .about-card p,
+  .pricing-head p,
+  .contact-left p {
     font-size: 15px;
     line-height: 1.5;
     max-width: 36ch;
-    margin-bottom: 20px;
+  }
+
+  .hero p {
+    margin-bottom: 28px;
+  }
+
+  .hero-cta {
+    margin-top: 12px;
   }
 }
 
@@ -1610,8 +1649,8 @@ select:focus-visible {
   .products,
   .beta-section,
   .contact {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .pricing-inner,
@@ -1623,12 +1662,25 @@ select:focus-visible {
   .products-grid-3,
   .contact-shell {
     width: 100%;
-    max-width: none;
+    max-width: 100%;
   }
 
   .hero h1,
-  .product-page-inner h1 {
+  .product-page-inner h1,
+  .about-card h2,
+  .pricing-head h2,
+  .contact-left h2 {
     font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero p,
+  .product-lead,
+  .about-card p,
+  .pricing-head p,
+  .contact-left p {
+    font-size: 15px;
+    line-height: 1.5;
   }
 
   .about-card,
@@ -1638,8 +1690,9 @@ select:focus-visible {
   .contact-left,
   .contact-form-wide,
   .beta-form {
-    width: 100%;
+    width: calc(100% - 16px);
     max-width: none;
+    margin: 0 auto;
     padding: 16px;
     border-radius: 16px;
   }
@@ -1651,12 +1704,12 @@ select:focus-visible {
   .about-stats,
   .about-grid,
   .contact-shell {
-    gap: 8px;
+    gap: 10px;
   }
 
   .beta-form {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .grid-2 {
@@ -1682,88 +1735,6 @@ select:focus-visible {
     padding: 12px 14px;
     font-size: 12px;
     border-radius: 10px;
-  }
-}
-
-/* --- MOBILE FOOTER CENTER --- */
-@media (max-width: 900px) {
-
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    justify-items: center;
-  }
-
-  .footer-col,
-  .footer-col-contact {
-    align-items: center;
-  }
-
-  .brand {
-    justify-content: center;
-  }
-
-  .footer-socials {
-    justify-content: center;
-  }
-
-  .footer-text {
-    text-align: center;
-  }
-
-  .footer-bottom {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-/* --- MOBILE WIDTH FIX --- */
-@media (max-width: 600px) {
-
-  /* Remove section padding that is causing narrow layout */
-  .about,
-  .pricing,
-  .products,
-  .beta-section,
-  .contact {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Let all layout containers go full width */
-  .pricing-inner,
-  .about-grid,
-  .about-stats,
-  .pricing-grid,
-  .other-services,
-  .products-grid,
-  .products-grid-3,
-  .contact-shell {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  /* Make cards fill width nicely with small edge spacing */
-  .about-card,
-  .panel,
-  .price-card,
-  .product-card,
-  .contact-left,
-  .contact-form-wide,
-  .beta-form {
-    width: calc(100% - 16px);
-    margin: 0 auto;
-  }
-
-  /* Slight spacing between cards */
-  .pricing-grid,
-  .products-grid,
-  .products-grid-3,
-  .other-services,
-  .about-stats,
-  .about-grid,
-  .contact-shell {
-    gap: 10px;
   }
 }
 
