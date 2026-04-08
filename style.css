@@ -2238,3 +2238,230 @@ main:not(.product-page):not(.legal-page)::after {
     box-sizing: border-box;
   }
 }
+
+
+/* =========================================
+   V4 FORM + MOBILE LAYOUT CLEANUP
+   ========================================= */
+
+/* Brighter branded Coming Soon pills on homepage only */
+.products .product-status {
+  background: linear-gradient(90deg, rgba(0, 170, 255, 0.28), rgba(0, 255, 156, 0.22), rgba(255, 140, 0, 0.18));
+  border: 1px solid rgba(0, 255, 156, 0.32);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 170, 255, 0.14), 0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+
+/* Unified form rhythm */
+.beta-form,
+.compact-beta-form,
+.contact-form-wide form,
+.beta-inline form,
+.product-page form {
+  display: grid;
+  gap: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  margin-top: 0;
+}
+
+.field,
+.full-width,
+.beta-form .field,
+.contact-form-wide .field,
+.compact-beta-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.full-width,
+.beta-form .field.full-width,
+.contact-form-wide .field.full-width {
+  grid-column: 1 / -1;
+}
+
+.field label,
+.full-width label,
+.beta-form .field label,
+.contact-form-wide .field label,
+.compact-beta-form .field label {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
+}
+
+.field input,
+.field select,
+.field textarea,
+.full-width input,
+.full-width select,
+.full-width textarea,
+.beta-form input,
+.beta-form select,
+.beta-form textarea,
+.contact-form-wide input,
+.contact-form-wide select,
+.contact-form-wide textarea,
+.select-trigger {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.field input,
+.field select,
+.full-width input,
+.full-width select,
+.beta-form input,
+.beta-form select,
+.contact-form-wide input,
+.contact-form-wide select,
+.select-trigger {
+  height: 56px;
+  min-height: 56px;
+}
+
+.field textarea,
+.full-width textarea,
+.beta-form textarea,
+.contact-form-wide textarea {
+  display: block;
+  min-height: 180px;
+}
+
+.beta-form .btn-gradient,
+.contact-form-wide .btn-gradient,
+.compact-beta-form .btn-gradient,
+.contact-form-wide button[type="submit"],
+.beta-form button[type="submit"] {
+  margin-top: 0;
+}
+
+.beta-form p,
+.compact-beta-form p,
+.contact-form-wide p,
+.price-note {
+  margin: 0;
+}
+
+/* Mobile gutters to match product pages better */
+@media (max-width: 600px) {
+  .hero,
+  .about,
+  .pricing,
+  .products,
+  .beta-section,
+  .contact,
+  .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-inner,
+  .pricing-inner,
+  .product-page-inner,
+  .footer-inner,
+  .about-grid,
+  .about-stats,
+  .pricing-grid,
+  .other-services,
+  .products-grid,
+  .products-grid-3,
+  .contact-shell,
+  .product-content,
+  .price-stack,
+  .contact-highlights,
+  .contact-direct,
+  .grid-2 {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-grid,
+  .about-panels,
+  .about-stats,
+  .pricing-grid,
+  .other-services,
+  .products-grid,
+  .products-grid-3,
+  .contact-shell,
+  .product-content,
+  .price-stack,
+  .contact-highlights,
+  .contact-direct,
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-card,
+  .panel,
+  .price-card,
+  .product-card,
+  .other-card,
+  .stat,
+  .founding-badge,
+  .contact-left,
+  .contact-form-wide,
+  .beta-form,
+  .mini-price,
+  .mini-price-card,
+  .contact-left .highlight,
+  .contact-left .contact-pill,
+  .product-hero-meta > *,
+  .other-services > *,
+  .about-stats > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .beta-form,
+  .compact-beta-form,
+  .contact-form-wide form,
+  .beta-inline form,
+  .product-page form {
+    gap: 16px;
+  }
+
+  .field,
+  .full-width,
+  .beta-form .field,
+  .contact-form-wide .field,
+  .compact-beta-form .field {
+    gap: 8px;
+  }
+
+  .field input,
+  .field select,
+  .full-width input,
+  .full-width select,
+  .beta-form input,
+  .beta-form select,
+  .contact-form-wide input,
+  .contact-form-wide select,
+  .select-trigger {
+    min-height: 60px;
+    height: 60px;
+  }
+
+  .field textarea,
+  .full-width textarea,
+  .beta-form textarea,
+  .contact-form-wide textarea {
+    min-height: 220px;
+  }
+}
