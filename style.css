@@ -801,10 +801,6 @@ select:focus-visible {
   z-index: 2;
 }
 
-.beta-form .field.full-width {
-  margin-bottom: 18px;
-}
-
 .compact-beta-form {
   max-width: none;
   margin-top: 18px;
@@ -1018,19 +1014,33 @@ select:focus-visible {
   gap: 14px;
 }
 
-.field {
-  margin-top: 14px;
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  margin: 0;
+}
+
+.field,
+.full-width {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
 }
 
 .full-width {
   grid-column: 1 / -1;
 }
 
-.field label {
+.field label,
+.full-width label {
   display: block;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.75);
-  margin: 0 0 8px 2px;
+  margin: 0;
+  line-height: 1.35;
 }
 
 .field input,
@@ -2463,5 +2473,48 @@ main:not(.product-page):not(.legal-page)::after {
   .beta-form textarea,
   .contact-form-wide textarea {
     min-height: 220px;
+  }
+}
+
+/* CONTACT FORM SPACING FIX */
+.contact-form-wide form {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-form-wide .grid-2 {
+  margin: 0;
+  gap: 18px;
+}
+
+.contact-form-wide .field,
+.contact-form-wide .full-width {
+  margin: 0;
+  gap: 8px;
+}
+
+.contact-form-wide .field label,
+.contact-form-wide .full-width label {
+  margin: 0;
+}
+
+.contact-form-wide .field input,
+.contact-form-wide .field select,
+.contact-form-wide .field textarea,
+.contact-form-wide .full-width input,
+.contact-form-wide .full-width select,
+.contact-form-wide .full-width textarea,
+.contact-form-wide .select-trigger {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .contact-form-wide form {
+    gap: 16px;
+  }
+
+  .contact-form-wide .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
