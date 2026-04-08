@@ -2136,3 +2136,105 @@ main:not(.product-page):not(.legal-page)::after {
     gap: 12px;
   }
 }
+
+/* =========================================
+   V3 TIDY UPS
+   - Homepage mobile card gutters match product pages
+   - Brighter homepage 'Coming Soon' pills
+   - Consistent form spacing
+   ========================================= */
+
+/* Bright branded homepage product pill */
+.products .product-status {
+  background: linear-gradient(90deg, rgba(0, 170, 255, 0.22), rgba(0, 255, 156, 0.18));
+  border: 1px solid rgba(0, 255, 156, 0.34);
+  color: #f4fffb;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset, 0 10px 26px rgba(0, 170, 255, 0.12);
+}
+
+/* Keep spacing between fields consistent */
+.beta-form,
+.contact-form-wide form,
+.beta-inline form,
+.product-page form {
+  display: grid;
+  gap: 14px;
+}
+
+.field,
+.beta-form .field,
+.contact-form-wide .field {
+  margin-top: 0;
+}
+
+.grid-2 {
+  margin-top: 0;
+}
+
+/* Keep full-width fields aligned with the same rhythm */
+.full-width,
+.beta-form .field.full-width,
+.contact-form-wide .field.full-width {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  /* Match homepage gutters to product pages instead of letting cards hit the edges */
+  .hero,
+  .about,
+  .pricing,
+  .products,
+  .beta-section,
+  .contact,
+  .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-inner,
+  .pricing-inner,
+  .product-page-inner,
+  .footer-inner,
+  .about-grid,
+  .about-stats,
+  .pricing-grid,
+  .other-services,
+  .products-grid,
+  .products-grid-3,
+  .contact-shell,
+  .product-content,
+  .price-stack,
+  .contact-highlights,
+  .contact-direct,
+  .grid-2 {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-card,
+  .panel,
+  .price-card,
+  .product-card,
+  .other-card,
+  .stat,
+  .founding-badge,
+  .contact-left,
+  .contact-form-wide,
+  .beta-form,
+  .mini-price,
+  .mini-price-card,
+  .contact-left .highlight,
+  .contact-left .contact-pill,
+  .product-hero-meta > *,
+  .other-services > *,
+  .about-stats > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+}
