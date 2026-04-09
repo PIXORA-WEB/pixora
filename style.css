@@ -1003,7 +1003,7 @@ main:not(.product-page):not(.legal-page)::after {
     rgba(7, 9, 13, 0.52);
 }
 
-.contact-form-wide form {
+.contact-form-wide {
   height: 100%;
   display: grid;
   align-content: start;
@@ -1144,13 +1144,13 @@ main:not(.product-page):not(.legal-page)::after {
 
 /* --- FORM SYSTEM --- */
 .beta-form,
-.contact-form-wide form,
+.contact-form-wide,
 .product-page form {
   display: grid;
   gap: 24px;
 }
 
-.contact-form-wide form {
+.contact-form-wide {
   height: 100%;
   align-content: start;
 }
@@ -1872,17 +1872,17 @@ main:not(.product-page):not(.legal-page)::after {
 }
 
 @media (max-width: 768px) {
-  .contact-form-wide form {
+  .contact-form-wide {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
-  .contact-form-wide form > .form-head {
+  .contact-form-wide > .form-head {
     margin-bottom: 18px;
   }
 
-  .contact-form-wide form > .grid-2 {
+  .contact-form-wide > .grid-2 {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 22px;
@@ -1890,8 +1890,8 @@ main:not(.product-page):not(.legal-page)::after {
     margin-bottom: 22px;
   }
 
-  .contact-form-wide form > .field.full-width,
-  .contact-form-wide form > .full-width {
+  .contact-form-wide > .field.full-width,
+  .contact-form-wide > .full-width {
     margin-bottom: 22px;
   }
 
@@ -1900,19 +1900,14 @@ main:not(.product-page):not(.legal-page)::after {
     gap: 10px;
   }
 
-  .contact-form-wide .field label,
-  .contact-form-wide .full-width label {
-    margin-bottom: 0;
-  }
-
   .contact-form-wide .field textarea,
   .contact-form-wide .full-width textarea {
     min-height: 220px;
   }
 
-  .contact-form-wide form > .btn-gradient,
-  .contact-form-wide form > button,
-  .contact-form-wide form > input[type="submit"] {
+  .contact-form-wide > .btn-gradient,
+  .contact-form-wide > button,
+  .contact-form-wide > input[type="submit"] {
     margin-top: 6px;
     width: 100%;
     max-width: none;
@@ -1921,23 +1916,23 @@ main:not(.product-page):not(.legal-page)::after {
 }
 
 @media (max-width: 600px) {
-  .contact-form-wide form > .form-head {
+  .contact-form-wide > .form-head {
     margin-bottom: 16px;
   }
 
-  .contact-form-wide form > .grid-2 {
+  .contact-form-wide > .grid-2 {
     row-gap: 20px;
     margin-bottom: 20px;
   }
 
-  .contact-form-wide form > .field.full-width,
-  .contact-form-wide form > .full-width {
+  .contact-form-wide > .field.full-width,
+  .contact-form-wide > .full-width {
     margin-bottom: 20px;
   }
 
-  .contact-form-wide form > .btn-gradient,
-  .contact-form-wide form > button,
-  .contact-form-wide form > input[type="submit"] {
+  .contact-form-wide > .btn-gradient,
+  .contact-form-wide > button,
+  .contact-form-wide > input[type="submit"] {
     margin-top: 8px;
   }
 }
