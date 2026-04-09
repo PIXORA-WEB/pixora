@@ -1873,44 +1873,71 @@ main:not(.product-page):not(.legal-page)::after {
 
 @media (max-width: 768px) {
   .contact-form-wide form {
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .grid-2 {
+  .contact-form-wide form > .form-head {
+    margin-bottom: 18px;
+  }
+
+  .contact-form-wide form > .grid-2 {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 22px;
+    row-gap: 22px;
+    column-gap: 0;
+    margin-bottom: 22px;
+  }
+
+  .contact-form-wide form > .field.full-width,
+  .contact-form-wide form > .full-width {
+    margin-bottom: 22px;
   }
 
   .contact-form-wide .field,
   .contact-form-wide .full-width {
-    gap: 12px;
+    gap: 10px;
   }
 
-  .contact-form-wide .field.full-width textarea {
+  .contact-form-wide .field label,
+  .contact-form-wide .full-width label {
+    margin-bottom: 0;
+  }
+
+  .contact-form-wide .field textarea,
+  .contact-form-wide .full-width textarea {
     min-height: 220px;
   }
 
-  .contact-form-wide .field.full-width + .btn-gradient,
-  .contact-form-wide .field.full-width + button,
-  .contact-form-wide .full-width + .btn-gradient,
-  .contact-form-wide .full-width + button {
-    margin-top: 10px;
+  .contact-form-wide form > .btn-gradient,
+  .contact-form-wide form > button,
+  .contact-form-wide form > input[type="submit"] {
+    margin-top: 6px;
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
   }
 }
 
 @media (max-width: 600px) {
-  .contact-form-wide form {
-    gap: 28px;
+  .contact-form-wide form > .form-head {
+    margin-bottom: 16px;
   }
 
-  .grid-2 {
-    gap: 20px;
+  .contact-form-wide form > .grid-2 {
+    row-gap: 20px;
+    margin-bottom: 20px;
   }
 
-  .contact-form-wide .field.full-width + .btn-gradient,
-  .contact-form-wide .field.full-width + button,
-  .contact-form-wide .full-width + .btn-gradient,
-  .contact-form-wide .full-width + button {
-    margin-top: 12px;
+  .contact-form-wide form > .field.full-width,
+  .contact-form-wide form > .full-width {
+    margin-bottom: 20px;
+  }
+
+  .contact-form-wide form > .btn-gradient,
+  .contact-form-wide form > button,
+  .contact-form-wide form > input[type="submit"] {
+    margin-top: 8px;
   }
 }
