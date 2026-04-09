@@ -1870,3 +1870,47 @@ main:not(.product-page):not(.legal-page)::after {
     transform: none;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-form-wide form {
+    gap: 30px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contact-form-wide .field,
+  .contact-form-wide .full-width {
+    gap: 12px;
+  }
+
+  .contact-form-wide .field.full-width textarea {
+    min-height: 220px;
+  }
+
+  .contact-form-wide .field.full-width + .btn-gradient,
+  .contact-form-wide .field.full-width + button,
+  .contact-form-wide .full-width + .btn-gradient,
+  .contact-form-wide .full-width + button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form-wide form {
+    gap: 28px;
+  }
+
+  .grid-2 {
+    gap: 20px;
+  }
+
+  .contact-form-wide .field.full-width + .btn-gradient,
+  .contact-form-wide .field.full-width + button,
+  .contact-form-wide .full-width + .btn-gradient,
+  .contact-form-wide .full-width + button {
+    margin-top: 12px;
+  }
+}
