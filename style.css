@@ -2325,63 +2325,6 @@ main:not(.product-page):not(.legal-page)::before {
   }
 }
 
-@media (max-width: 600px) {
-  .hero {
-    min-height: auto;
-    padding-top: 112px;
-    padding-bottom: 72px;
-  }
-
-  .hero h1 {
-    max-width: 100%;
-    font-size: clamp(2rem, 8vw, 2.8rem);
-    line-height: 1.08;
-  }
-
-  .hero p {
-    font-size: 15.5px;
-    line-height: 1.72;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-cta .btn-gradient,
-  .hero-cta .btn-ghost {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .pricing-head,
-  .section-head-left {
-    margin-bottom: 24px;
-  }
-
-  .about-card,
-  .contact-left,
-  .contact-form-wide,
-  .panel,
-  .price-card,
-  .product-card,
-  .other-card,
-  .beta-form {
-    padding: 24px;
-  }
-
-  .grid-2 {
-    gap: 18px;
-  }
-
-  .back-to-top {
-    right: 16px;
-    bottom: 16px;
-    width: 48px;
-    height: 48px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .back-to-top,
   .reveal-up {
@@ -2391,5 +2334,186 @@ main:not(.product-page):not(.legal-page)::before {
   .reveal-up {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* =========================================================
+   PIXORA MOBILE FIXES
+   - full-height hero on mobile
+   - preserve desktop-style form spacing on mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100dvh !important;
+    min-height: 100svh !important;
+    padding-top: 96px !important;
+    padding-bottom: 48px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: 1100px !important;
+    margin: 0 auto;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    max-width: 16ch !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: clamp(2.2rem, 8vw, 3.2rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  .hero p {
+    max-width: 34ch !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 16px !important;
+    line-height: 1.72 !important;
+  }
+
+  .hero-cta {
+    width: 100%;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+    gap: 12px !important;
+  }
+
+  .hero-cta .btn-gradient,
+  .hero-cta .btn-ghost {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* keep form cards visually the same as desktop */
+  .contact-left,
+  .contact-form-wide,
+  .beta-form,
+  .about-card,
+  .panel,
+  .price-card,
+  .product-card,
+  .other-card {
+    padding: 34px !important;
+    border-radius: 24px !important;
+  }
+
+  .contact-shell {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+
+  .contact-form-wide form,
+  .beta-form,
+  .product-page form {
+    gap: 24px !important;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .field,
+  .full-width {
+    gap: 10px !important;
+  }
+
+  .field input,
+  .field select,
+  .full-width input,
+  .full-width select,
+  .beta-form input,
+  .beta-form select,
+  .contact-form-wide input,
+  .contact-form-wide select,
+  .select-trigger {
+    height: 58px !important;
+    min-height: 58px !important;
+    padding: 0 18px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .field textarea,
+  .full-width textarea,
+  .beta-form textarea,
+  .contact-form-wide textarea {
+    min-height: 180px !important;
+    padding: 16px 18px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .contact-form-wide .field.full-width textarea {
+    min-height: 260px !important;
+  }
+
+  .form-head {
+    margin-bottom: 2px !important;
+  }
+
+  .form-head p {
+    max-width: 48ch !important;
+  }
+
+  .contact-form-wide .btn-gradient,
+  .beta-form .btn-gradient {
+    width: auto !important;
+    max-width: none !important;
+    justify-self: start !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100dvh !important;
+    min-height: 100svh !important;
+    padding-top: 88px !important;
+    padding-bottom: 40px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero h1 {
+    max-width: 14ch !important;
+    font-size: clamp(2rem, 9vw, 2.8rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  .hero p {
+    max-width: 30ch !important;
+    font-size: 15.5px !important;
+  }
+
+  .about,
+  .pricing,
+  .products,
+  .beta-section,
+  .contact {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* keep same card feel as desktop, just slightly reduced */
+  .contact-left,
+  .contact-form-wide,
+  .beta-form,
+  .about-card,
+  .panel,
+  .price-card,
+  .product-card,
+  .other-card {
+    padding: 28px !important;
   }
 }
