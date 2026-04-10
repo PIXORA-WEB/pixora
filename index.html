@@ -216,8 +216,7 @@
             </ul>
 
             <div class="price-actions">
-              <a class="btn-gradient" href="#contact">Get started</a>
-              <a class="btn-ghost" href="#contact">Get a Quote</a>
+              <button class="btn-gradient" type="button" data-open-questionnaire="basic">Get Started</button>
             </div>
 
             <p class="price-note">No commitment — just a quick quote.</p>
@@ -240,8 +239,7 @@
             </ul>
 
             <div class="price-actions">
-              <a class="btn-gradient" href="#contact">Get started</a>
-              <a class="btn-ghost" href="#contact">Get a Quote</a>
+              <button class="btn-gradient" type="button" data-open-questionnaire="standard">Get Started</button>
             </div>
 
             <p class="price-note">No commitment — just a quick quote.</p>
@@ -263,8 +261,7 @@
             </ul>
 
             <div class="price-actions">
-              <a class="btn-gradient" href="#contact">Get started</a>
-              <a class="btn-ghost" href="#contact">Get a Quote</a>
+              <button class="btn-gradient" type="button" data-open-questionnaire="pro">Get Started</button>
             </div>
 
             <p class="price-note">No commitment — just a quick quote.</p>
@@ -780,5 +777,172 @@
     window.addEventListener('scroll', toggleBackToTop, { passive: true });
     toggleBackToTop();
   </script>
+
+  <!-- QUESTIONNAIRE MODAL -->
+<div id="questionnaireModal" class="modal" aria-hidden="true">
+  <div class="modal-overlay" data-close-modal></div>
+
+  <div class="modal-content">
+    <button class="modal-close" data-close-modal>✕</button>
+
+    <div class="modal-head">
+      <span id="modalTierTag" class="modal-tag"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalSub"></p>
+    </div>
+
+    <textarea id="questionnaireText" readonly></textarea>
+
+    <div class="modal-actions">
+      <button id="copyBtn" class="btn-ghost">Copy</button>
+      <a id="emailBtn" class="btn-gradient">Email answers</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const modal = document.getElementById('questionnaireModal');
+    if (!modal) return;
+
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSub = document.getElementById('modalSub');
+    const modalTierTag = document.getElementById('modalTierTag');
+    const questionnaireText = document.getElementById('questionnaireText');
+    const copyBtn = document.getElementById('copyBtn');
+    const emailBtn = document.getElementById('emailBtn');
+
+    const questionnaireData = {
+      basic: {
+        tag: 'Basic',
+        title: 'Basic Website Questionnaire',
+        sub: 'Answer these quick questions and email them back.',
+        text:
+`Basic Website Questionnaire
+
+1. What is your business name?
+2. What does your business do?
+3. What is the main goal of the website?
+4. Do you already have a logo and brand colours?
+5. What sections do you want on the page?
+   (Example: Hero, About, Services, Testimonials, Contact)
+6. Do you already have the text/content ready?
+7. Do you already have a domain and hosting?
+8. Do you want a contact form on the site?
+9. Are there any websites you like the style of?
+10. Is there anything else you want included?`
+      },
+
+      standard: {
+        tag: 'Standard',
+        title: 'Standard Website Questionnaire',
+        sub: 'Answer these questions so I can prepare an accurate quote.',
+        text:
+`Standard Website Questionnaire
+
+1. What is your business name?
+2. What does your business do?
+3. What is the main goal of the website?
+4. How many pages do you think you need?
+5. What pages do you want?
+   (Example: Home, About, Services, Pricing, Contact)
+6. Do you already have branding, logo and colours?
+7. Do you already have the content/text ready?
+8. Do you need help with wording or structure?
+9. Do you already have domain and hosting?
+10. Do you want contact forms, enquiry forms or booking forms?
+11. Are there any websites you like the look of?
+12. Any extra functionality needed?`
+      },
+
+      pro: {
+        tag: 'Professional',
+        title: 'Professional Website Questionnaire',
+        sub: 'Complete this so I can scope the project properly.',
+        text:
+`Professional Website Questionnaire
+
+1. What is your business name?
+2. What does your business do?
+3. What is the main goal of the website?
+4. How many pages do you need?
+5. What pages or sections are required?
+6. Do you already have a logo, colours and brand style?
+7. Do you already have all content ready?
+8. Do you need help with content structure or layout?
+9. Do you already have domain and hosting?
+10. What forms or lead capture features do you need?
+11. Do you need extra functionality?
+   (Examples: custom sections, advanced layout, gated content, integrations)
+12. Are there websites you like for design inspiration?
+13. Do you have a preferred timeline?
+14. Any other important notes for the build?`
+      }
+    };
+
+    function openQuestionnaireModal(tier) {
+      const data = questionnaireData[tier];
+      if (!data) return;
+
+      modalTierTag.textContent = data.tag;
+      modalTitle.textContent = data.title;
+      modalSub.textContent = data.sub;
+      questionnaireText.value = data.text;
+
+      const subject = encodeURIComponent(data.title + ' - PIXORA');
+      const body = encodeURIComponent(data.text);
+      emailBtn.href = `mailto:hello@pixora.es?subject=${subject}&body=${body}`;
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuestionnaireModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', function (event) {
+      const openBtn = event.target.closest('[data-open-questionnaire]');
+      if (openBtn) {
+        event.preventDefault();
+        openQuestionnaireModal(openBtn.getAttribute('data-open-questionnaire'));
+        return;
+      }
+
+      const closeBtn = event.target.closest('[data-close-modal]');
+      if (closeBtn) {
+        event.preventDefault();
+        closeQuestionnaireModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeQuestionnaireModal();
+      }
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async function () {
+        try {
+          await navigator.clipboard.writeText(questionnaireText.value);
+          copyBtn.textContent = 'Copied';
+          setTimeout(() => {
+            copyBtn.textContent = 'Copy';
+          }, 1500);
+        } catch (error) {
+          copyBtn.textContent = 'Copy failed';
+          setTimeout(() => {
+            copyBtn.textContent = 'Copy';
+          }, 1500);
+        }
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
