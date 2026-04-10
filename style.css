@@ -196,12 +196,12 @@ select:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 160px;
-  height: 38px;
-  padding: 8px 14px;
+  min-width: 132px;
+  height: 32px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -862,11 +862,6 @@ main:not(.product-page):not(.legal-page)::after {
   height: 100%;
 }
 
-.product-card .panel-cta {
-  margin-top: auto;
-  align-self: flex-start;
-}
-
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
@@ -884,11 +879,6 @@ main:not(.product-page):not(.legal-page)::after {
   font-size: var(--text-base);
   line-height: 1.75;
   min-height: 140px;
-}
-
-.product-card .panel-cta {
-  margin-top: auto;
-  align-self: flex-start;
 }
 
 .product-status {
@@ -910,10 +900,16 @@ main:not(.product-page):not(.legal-page)::after {
 .product-feature-list {
   list-style: none;
   margin-top: 22px;
+  margin-bottom: 10px;
   display: grid;
   gap: 12px;
   padding-left: 0;
   min-height: 0;
+}
+
+.product-card .panel-cta {
+  margin-top: 28px;
+  align-self: flex-start;
 }
 
 .product-feature-list li {
