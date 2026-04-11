@@ -937,6 +937,15 @@ main:not(.product-page):not(.legal-page)::after {
   margin: 10px 0 0;
 }
 
+.mini-price-card span {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.mini-price-card small {
+  opacity: 0.7;
+}
+
 .mini-price,
 .mini-price-card {
   padding: 16px 18px;
@@ -1657,10 +1666,57 @@ main:not(.product-page):not(.legal-page)::after {
 }
 
 .product-hero-meta {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  flex-wrap: wrap;
   margin: 24px 0 32px;
+}
+
+.product-hero-meta .mini-price-card {
+  height: 100%;
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-hero-meta-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-hero-meta-2 .mini-price-card {
+  height: 100%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.product-hero-meta-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-hero-meta-3 .mini-price-card {
+  height: 100%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Make middle one stand out */
+.product-hero-meta-3 .featured {
+  border: 1px solid rgba(255,255,255,0.18);
+  background:
+    linear-gradient(180deg, rgba(0,170,255,0.14), rgba(255,60,60,0.08)),
+    rgba(10,10,12,0.8);
+  transform: scale(1.03);
 }
 
 /* --- PRODUCT / LEGAL PAGE SMALL LAYOUT REFINEMENTS --- */
@@ -1670,12 +1726,43 @@ main:not(.product-page):not(.legal-page)::after {
   margin-right: auto;
 }
 
-.beta-inline {
-  margin-top: 36px;
-}
-
 .legal-back {
   margin-top: 40px;
+}
+
+.beta-inline {
+  max-width: 860px;
+  margin: 36px auto 0;
+  padding: 34px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.038), rgba(255,255,255,0.012)),
+    rgba(7, 9, 13, 0.48);
+  border: 1px solid rgba(255,255,255,0.065);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.16),
+    0 20px 50px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.beta-inline h2 {
+  margin-bottom: 10px;
+}
+
+.beta-inline p {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.75;
+}
+
+.compact-beta-form {
+  margin-top: 22px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 /* --- RESPONSIVE --- */
@@ -1730,25 +1817,25 @@ main:not(.product-page):not(.legal-page)::after {
   }
 
   .nav {
-    position: absolute;
-    top: calc(100% + 12px);
-    right: 20px;
-    left: 20px;
-    display: grid;
-    gap: 10px;
-    padding: 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: rgba(12, 12, 12, 0.96);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-    pointer-events: none;
-  }
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 20px;
+  left: 20px;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0b0d11;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.72);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
 
   .nav a {
     margin: 0;
@@ -1914,6 +2001,26 @@ main:not(.product-page):not(.legal-page)::after {
 
   .product-content {
     grid-template-columns: 1fr;
+  }
+
+  .product-hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero-meta .mini-price-card {
+    min-height: 0;
+  }
+
+  .product-hero-meta-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero-meta-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero-meta-3 .featured {
+    transform: none;
   }
 }
 
@@ -2227,4 +2334,21 @@ main:not(.product-page):not(.legal-page)::after {
   .contact-form-wide > input[type="submit"] {
     margin-top: 14px !important;
   }
+}
+
+.beta-inline,
+.beta-inline .panel,
+.compact-beta-form,
+.compact-beta-form .field,
+.compact-beta-form .full-width,
+.compact-beta-form .custom-select {
+  overflow: visible;
+}
+
+.compact-beta-form .custom-select {
+  z-index: 30;
+}
+
+.compact-beta-form .select-dropdown {
+  z-index: 200;
 }
