@@ -1877,7 +1877,7 @@ main:not(.product-page):not(.legal-page)::after {
   .hero {
     min-height: 100dvh;
     min-height: 100svh;
-    padding: 96px 20px 48px;
+    padding: 128px 20px 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1908,7 +1908,7 @@ main:not(.product-page):not(.legal-page)::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .hero-cta .btn-gradient,
@@ -2017,7 +2017,7 @@ main:not(.product-page):not(.legal-page)::after {
   .hero {
     min-height: 100dvh;
     min-height: 100svh;
-    padding: 88px 16px 40px;
+    padding: 124px 16px 40px;
   }
 
   .hero h1 {
@@ -3110,4 +3110,187 @@ main:not(.product-page):not(.legal-page)::before {
 .product-page .beta-inline .compact-beta-form::after,
 .product-page .beta-inline .beta-form::after {
   display: none !important;
+}
+
+/* --- Mobile hero fit fix ---
+   Option 1 mobile hero: clean app-first layout, one CTA, no chips,
+   and a bottom app visual contained within one device screen. */
+@media (max-width: 900px) {
+  .app-hero {
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    max-height: 100vh;
+    max-height: 100svh;
+    max-height: 100dvh;
+    box-sizing: border-box;
+    padding: calc(124px + env(safe-area-inset-top)) 20px max(18px, env(safe-area-inset-bottom));
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 22% 18%, rgba(115, 76, 255, 0.38), transparent 34%),
+      radial-gradient(circle at 78% 28%, rgba(0, 170, 255, 0.22), transparent 32%),
+      linear-gradient(180deg, #0f1230 0%, #0f1230 100%);
+  }
+
+  .app-hero::after {
+    display: none;
+  }
+
+  .app-hero .hero-inner,
+  .app-hero-grid {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .app-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: stretch;
+    align-items: start;
+    gap: clamp(8px, 1.8vh, 16px);
+  }
+
+  .app-hero-copy {
+    min-height: 0;
+    text-align: center;
+  }
+
+  .app-hero-copy .tag {
+    display: inline-flex;
+    margin: 0 auto 14px;
+    font-size: 0.68rem;
+    padding: 7px 12px;
+  }
+
+  .app-hero-copy h1 {
+    max-width: 15ch;
+    margin: 0 auto 12px;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .app-hero-copy p {
+    max-width: 31ch;
+    margin: 0 auto 18px;
+    font-size: clamp(0.9rem, 3.2vw, 1rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .app-hero .hero-cta {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .app-hero .hero-cta .btn-gradient {
+    width: auto;
+    min-width: 150px;
+    max-width: max-content;
+    min-height: 44px;
+    height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .app-hero .hero-cta .btn-ghost,
+  .app-hero .hero-proof {
+    display: none;
+  }
+
+  .hero-device-wrap {
+    min-height: 0;
+    align-self: stretch;
+    align-items: start;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0.92;
+  }
+
+  .hero-device-wrap::before {
+    width: min(520px, 120vw);
+    opacity: 0.55;
+  }
+
+  .hero-app-image {
+    width: min(470px, 106vw);
+    max-width: none;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 620px) {
+  .app-hero {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .app-hero-copy h1 {
+    max-width: 14ch;
+    font-size: clamp(1.78rem, 8.6vw, 2.55rem);
+  }
+
+  .app-hero-copy p {
+    max-width: 30ch;
+    margin-bottom: 16px;
+    font-size: clamp(0.84rem, 3.8vw, 0.94rem);
+  }
+
+  .hero-app-image {
+    width: min(430px, 112vw);
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 390px), (max-height: 720px) and (max-width: 900px) {
+  .app-hero {
+    padding-top: calc(104px + env(safe-area-inset-top));
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .app-hero-grid {
+    gap: 8px;
+  }
+
+  .app-hero-copy .tag {
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    font-size: 0.62rem;
+  }
+
+  .app-hero-copy h1 {
+    margin-bottom: 9px;
+    font-size: clamp(1.55rem, 7.8vw, 2.05rem);
+  }
+
+  .app-hero-copy p {
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    line-height: 1.38;
+  }
+
+  .app-hero .hero-cta .btn-gradient {
+    min-width: 136px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+
+  .hero-app-image {
+    width: min(370px, 108vw);
+  }
 }
