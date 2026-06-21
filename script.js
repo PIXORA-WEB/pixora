@@ -423,6 +423,8 @@ function renderHeroSection() {
 }
 
 function initHeroPhonePreviews(stage) {
+  const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+
   const clearPreviewedPhones = (exceptPhone = null) => {
     stage.querySelectorAll(".hero-phone.is-previewed").forEach((phone) => {
       if (phone !== exceptPhone) phone.classList.remove("is-previewed");
@@ -432,6 +434,7 @@ function initHeroPhonePreviews(stage) {
   stage.querySelectorAll(".hero-phone").forEach((phone) => {
     phone.addEventListener("click", (event) => {
       if (event.detail === 0) return;
+      if (fineHover.matches) return;
 
       if (!phone.classList.contains("is-previewed")) {
         event.preventDefault();
@@ -447,6 +450,10 @@ function initHeroPhonePreviews(stage) {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") clearPreviewedPhones();
+  });
+
+  fineHover.addEventListener("change", () => {
+    if (fineHover.matches) clearPreviewedPhones();
   });
 }
 
