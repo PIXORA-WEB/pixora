@@ -419,6 +419,35 @@ function renderHeroSection() {
     createHeroPhone(PIXORA_APPS.budget, "budget"),
     createHeroPhone(PIXORA_APPS.play, "play")
   );
+  initHeroPhonePreviews(mount);
+}
+
+function initHeroPhonePreviews(stage) {
+  const clearPreviewedPhones = (exceptPhone = null) => {
+    stage.querySelectorAll(".hero-phone.is-previewed").forEach((phone) => {
+      if (phone !== exceptPhone) phone.classList.remove("is-previewed");
+    });
+  };
+
+  stage.querySelectorAll(".hero-phone").forEach((phone) => {
+    phone.addEventListener("click", (event) => {
+      if (event.detail === 0) return;
+
+      if (!phone.classList.contains("is-previewed")) {
+        event.preventDefault();
+        clearPreviewedPhones(phone);
+        phone.classList.add("is-previewed");
+      }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!stage.contains(event.target)) clearPreviewedPhones();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") clearPreviewedPhones();
+  });
 }
 
 function renderAppCards() {
@@ -466,12 +495,8 @@ function renderAppPage() {
     <div class="product-page-inner">
       <section class="app-page-hero">
         <div class="app-page-copy">
-          <div class="tag">${app.eyebrow}</div>
           <h1>${app.headline}</h1>
           <p class="product-lead">${app.description}</p>
-          <div class="app-page-actions">
-            <a class="btn-gradient" href="#features">${app.primaryCta}</a>
-          </div>
         </div>
         <div class="app-page-media">
           <img src="${app.heroImages[0]}" alt="${app.heroAlt}" width="1480" height="2800" loading="eager" decoding="async" fetchpriority="high" />
@@ -604,6 +629,22 @@ function renderSiteFooter() {
   `;
 }
 
+function ensureBackToTop() {
+  if (document.getElementById("backToTop")) return;
+
+  const backToTop = document.createElement("a");
+  backToTop.href = "#top";
+  backToTop.className = "back-to-top";
+  backToTop.id = "backToTop";
+  backToTop.setAttribute("aria-label", "Back to top");
+  backToTop.innerHTML = `
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+      <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
+  document.body.append(backToTop);
+}
+
 function initBackToTop() {
   const backToTop = document.getElementById("backToTop");
   if (!backToTop) return;
@@ -678,5 +719,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAppPage();
   initScreenshotLightbox();
   renderSiteFooter();
+  ensureBackToTop();
   initBackToTop();
 });
