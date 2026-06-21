@@ -1,0 +1,26 @@
+[2m2026-03-15T20:47:49.237151Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m static-web-server 2.33.1
+[2m2026-03-15T20:47:49.237170Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m log level: error
+[2m2026-03-15T20:47:49.237739Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m server bound to tcp socket [::]:3000
+[2m2026-03-15T20:47:49.237747Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m runtime worker threads: 4
+[2m2026-03-15T20:47:49.237750Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m runtime max blocking threads: 512
+[2m2026-03-15T20:47:49.239201Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m redirect trailing slash: enabled=true
+[2m2026-03-15T20:47:49.239209Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m ignore hidden files: enabled=false
+[2m2026-03-15T20:47:49.239213Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m disable symlinks: enabled=false
+[2m2026-03-15T20:47:49.239215Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m grace period before graceful shutdown: 0s
+[2m2026-03-15T20:47:49.239224Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m index files: index.html
+[2m2026-03-15T20:47:49.239228Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m directory listing: enabled=false
+[2m2026-03-15T20:47:49.239233Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m directory listing order code: 6
+[2m2026-03-15T20:47:49.239236Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m directory listing format: Html
+[2m2026-03-15T20:47:49.245459Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m fallback page: enabled=false, value=""
+[2m2026-03-15T20:47:49.245464Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m health endpoint: enabled=false
+[2m2026-03-15T20:47:49.245468Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m log requests with remote and real IP addresses: enabled=false
+[2m2026-03-15T20:47:49.245482Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m basic authentication: enabled=false
+[2m2026-03-15T20:47:49.245485Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m maintenance mode: enabled=false
+[2m2026-03-15T20:47:49.245488Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m maintenance mode status: 503
+[2m2026-03-15T20:47:49.245490Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m maintenance mode file: ""
+[2m2026-03-15T20:47:49.245494Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m compression static: enabled=false
+[2m2026-03-15T20:47:49.245500Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m auto compression: enabled=true, formats=deflate,gzip,brotli,zstd, compression level=Default
+[2m2026-03-15T20:47:49.245504Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m cache control headers: enabled=true
+[2m2026-03-15T20:47:49.245507Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m security headers: enabled=false
+[2m2026-03-15T20:47:49.246601Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m http1 server is listening on http://[::]:3000
+[2m2026-03-15T20:47:49.246611Z[0m [32m INFO[0m [2mstatic_web_server::info[0m[2m:[0m press ctrl+c to shut down the server
