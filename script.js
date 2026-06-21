@@ -471,7 +471,7 @@ function renderExternalCta(app, className = "btn-gradient") {
 
 function renderFocusedHeroImage(app, className, sizes, loading = "eager") {
   return `
-    <div class="${className}"${className === "focus-mobile-hero-shot" ? " data-focus-mobile-shot" : ""}>
+    <div class="${className}">
       <img src="${app.carouselScreenshots[0].image}" srcset="${app.carouselScreenshots[0].image} 1480w" sizes="${sizes}" alt="${app.carouselScreenshots[0].alt}" width="1480" height="2800" loading="${loading}" decoding="async"${loading === "eager" ? " fetchpriority=\"high\"" : ""} />
     </div>
   `;
@@ -482,8 +482,8 @@ function renderFocusedProductPage(app) {
 
   return `
     <div class="product-page-inner focus-landing">
-      <section class="focus-hero">
-        <div class="focus-hero-copy">
+      <section class="app-page-hero">
+        <div class="app-page-copy">
           <h1>${app.headline}</h1>
           <p class="product-lead">${app.lead}</p>
           <div class="focus-hero-actions">
@@ -491,10 +491,10 @@ function renderFocusedProductPage(app) {
             <p class="cta-note">${app.ctaNote}</p>
           </div>
         </div>
-        ${renderFocusedHeroImage(app, "focus-hero-media", "(max-width: 980px) 320px, 360px")}
+        ${renderFocusedHeroImage(app, "app-page-media", "(max-width: 980px) 320px, 360px")}
       </section>
 
-      ${renderFocusedHeroImage(app, "focus-mobile-hero-shot", "(max-width: 768px) 70vw, 1px", "lazy")}
+      ${renderFocusedHeroImage(app, "app-mobile-phone-section", "(max-width: 768px) 72vw, 1px", "lazy")}
 
       <section class="app-content-section focus-why-section" id="why">
         <div class="section-head-left">
@@ -924,44 +924,6 @@ function initBudgetCarousel() {
   });
 }
 
-function initFocusedHeroScroll() {
-  const shot = document.querySelector("[data-focus-mobile-shot]");
-  if (!shot) return;
-
-  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const mobileQuery = window.matchMedia("(max-width: 768px)");
-  let ticking = false;
-
-  const setProgress = () => {
-    ticking = false;
-
-    if (!mobileQuery.matches || motionQuery.matches) {
-      shot.style.removeProperty("--focus-shot-progress");
-      return;
-    }
-
-    const rect = shot.getBoundingClientRect();
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    const headerHeight = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-height")) || 0;
-    const start = viewportHeight - headerHeight - 12;
-    const end = viewportHeight * 0.34;
-    const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
-    shot.style.setProperty("--focus-shot-progress", progress.toFixed(3));
-  };
-
-  const requestProgress = () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(setProgress);
-  };
-
-  window.addEventListener("scroll", requestProgress, { passive: true });
-  window.addEventListener("resize", requestProgress);
-  motionQuery.addEventListener?.("change", requestProgress);
-  mobileQuery.addEventListener?.("change", requestProgress);
-  setProgress();
-}
-
 function renderSiteFooter() {
   const footer = document.querySelector("[data-site-footer]");
   if (!footer) return;
@@ -1096,7 +1058,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAppCards();
   renderAppPage();
   initBudgetCarousel();
-  initFocusedHeroScroll();
   initScreenshotLightbox();
   renderSiteFooter();
   ensureBackToTop();

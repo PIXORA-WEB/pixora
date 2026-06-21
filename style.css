@@ -2210,8 +2210,7 @@ main:not(.product-page):not(.legal-page)::before {
   opacity: 0.78;
 }
 
-.hero-section,
-.app-page-hero {
+.hero-section {
   min-height: 100svh;
   display: grid;
   align-items: center;
@@ -2862,21 +2861,18 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .app-page-hero {
-  height: 100svh;
+  --phone-w-main: clamp(260px, 28vw, 360px);
   min-height: 100svh;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(520px, 0.7fr);
+  display: grid;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(360px, 0.7fr);
   gap: clamp(24px, 5vw, 76px);
   padding: clamp(96px, 11vh, 132px) 0 clamp(32px, 6vh, 70px);
   align-content: center;
   justify-items: center;
   overflow: hidden;
-}
-
-@supports (height: 100dvh) {
-  .app-page-hero {
-    height: 100dvh;
-    min-height: 100dvh;
-  }
 }
 
 .app-page-copy {
@@ -2894,6 +2890,14 @@ main:not(.product-page):not(.legal-page)::before {
   font-weight: 900;
   letter-spacing: 0;
   text-wrap: balance;
+}
+
+.app-page-copy .product-lead {
+  max-width: 660px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.62;
 }
 
 .app-page-media {
@@ -2932,6 +2936,10 @@ main:not(.product-page):not(.legal-page)::before {
   object-fit: contain;
   image-rendering: auto;
   backface-visibility: hidden;
+}
+
+.app-mobile-phone-section {
+  display: none;
 }
 
 .app-content-section {
@@ -3358,35 +3366,6 @@ body.has-screenshot-lightbox {
   margin-top: clamp(68px, 9vw, 112px);
 }
 
-.focus-hero {
-  min-height: min(840px, 100svh);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-  align-items: center;
-  gap: clamp(28px, 5vw, 72px);
-  padding: 118px 0 56px;
-}
-
-.focus-hero-copy {
-  max-width: min(100%, 840px);
-}
-
-.focus-hero h1 {
-  max-width: min(100%, 840px);
-  margin: 0;
-  font-size: clamp(2.55rem, 6vw, 5.8rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-}
-
-.focus-hero .product-lead {
-  max-width: 660px;
-  margin: 24px 0 0;
-  color: rgba(255, 255, 255, 0.76);
-  font-size: clamp(1rem, 1.7vw, 1.25rem);
-  line-height: 1.62;
-}
-
 .focus-hero-actions {
   display: grid;
   justify-items: start;
@@ -3399,27 +3378,6 @@ body.has-screenshot-lightbox {
   color: rgba(255, 255, 255, 0.62);
   font-size: var(--text-xs);
   line-height: 1.5;
-}
-
-.focus-hero-media {
-  position: relative;
-  width: min(360px, 100%);
-  justify-self: center;
-  aspect-ratio: 1480 / 2800;
-  background: transparent;
-}
-
-.focus-mobile-hero-shot {
-  display: none;
-}
-
-.focus-hero-media img,
-.focus-mobile-hero-shot img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: transparent;
 }
 
 .focus-landing .section-head-left {
@@ -3640,15 +3598,6 @@ body.has-screenshot-lightbox {
     font-size: clamp(2.2rem, 4.4vw, 4.1rem);
   }
 
-  .app-page-hero {
-    grid-template-columns: minmax(260px, 0.9fr) minmax(360px, 0.65fr);
-    gap: clamp(22px, 3.5vw, 42px);
-  }
-
-  .app-page-copy h1 {
-    font-size: clamp(2.15rem, 4.2vw, 4.1rem);
-  }
-
   .why-grid,
   .app-card-list,
   .outcome-grid,
@@ -3691,52 +3640,8 @@ body.has-screenshot-lightbox {
     --phone-w-main: clamp(230px, 38vw, 320px);
   }
 
-  .app-page-hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    justify-items: center;
-    text-align: center;
-    gap: clamp(8px, 1.8svh, 14px);
-    padding: 96px 0 34px;
-    align-content: center;
-  }
-
-  .app-page-copy {
-    max-width: min(720px, 100%);
-  }
-
-  .app-page-copy h1 {
-    max-width: min(18ch, 680px);
-    font-size: clamp(2.1rem, 6.4vw, 3.8rem);
-  }
-
-  .app-page-media {
-    width: min(520px, 82vw);
-    aspect-ratio: auto;
-    align-self: start;
-  }
-
-  .focus-hero {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-    padding-top: 84px;
-    gap: 28px;
-  }
-
-  .focus-hero-copy,
-  .focus-hero h1,
-  .focus-hero .product-lead {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .focus-hero-actions {
     justify-items: center;
-  }
-
-  .focus-hero-media {
-    width: min(300px, 68vw, calc(48vh * 1480 / 2800));
   }
 
   .focus-trust-section {
@@ -3746,36 +3651,44 @@ body.has-screenshot-lightbox {
 }
 
 @media (max-width: 768px) {
-  .focus-hero {
-    min-height: calc(100svh - var(--header-height));
+  .app-page-hero {
+    min-height: 100svh;
+    height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     position: relative;
     z-index: 2;
-    padding: 42px 18px 28px;
+    padding: var(--header-height) 18px 24px;
     text-align: center;
+    gap: 0;
   }
 
-  .focus-hero-media {
+  .app-page-media {
     display: none;
   }
 
-  .focus-hero-copy {
-    max-width: min(90vw, 680px);
+  .app-page-copy {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
   }
 
-  .focus-hero h1 {
-    max-width: min(90vw, 680px);
-    font-size: clamp(2.625rem, 11vw, 3.5rem);
-    line-height: 1;
+  .app-page-copy h1 {
+    max-width: 14ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(2.35rem, 10vw, 3.4rem);
+    line-height: 0.98;
   }
 
-  .focus-hero .product-lead {
-    max-width: min(90vw, 620px);
-    margin-top: 20px;
-    font-size: clamp(1.125rem, 5vw, 1.375rem);
-    line-height: 1.4;
+  .app-page-copy .product-lead {
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1rem, 4.4vw, 1.2rem);
+    line-height: 1.45;
   }
 
   .focus-hero-actions {
@@ -3790,32 +3703,20 @@ body.has-screenshot-lightbox {
     padding-bottom: 12px;
   }
 
-  .focus-mobile-hero-shot {
+  .app-mobile-phone-section {
     display: block;
-    width: min(72vw, 360px);
-    max-height: 58svh;
-    aspect-ratio: 1480 / 2800;
-    margin: 0 auto clamp(-150px, -18svh, -86px);
+    padding: 24px 18px 56px;
     background: transparent;
-    pointer-events: none;
-    transform: translate3d(0, calc(var(--focus-shot-progress, 0) * -30svh), 0);
-    transition: transform 0.08s linear;
-    will-change: transform;
-    position: relative;
-    z-index: 1;
+    text-align: center;
   }
 
-  .focus-mobile-hero-shot img {
-    max-height: 58svh;
-  }
-}
-
-@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
-  .focus-mobile-hero-shot {
-    margin: 18px auto 0;
-    transform: none;
-    transition: none;
-    will-change: auto;
+  .app-mobile-phone-section img {
+    display: block;
+    width: min(72vw, 340px);
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    background: transparent;
   }
 }
 
@@ -3852,11 +3753,6 @@ body.has-screenshot-lightbox {
 }
 
 @media (max-width: 900px) {
-  .app-page-hero {
-    padding: 92px 0 28px;
-    gap: clamp(7px, 1.6svh, 12px);
-  }
-
   .apple-product-inner {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -4002,26 +3898,6 @@ body.has-screenshot-lightbox {
     grid-template-columns: 1fr;
   }
 
-  .app-page-copy h1 {
-    max-width: 14ch;
-    font-size: clamp(2rem, 10vw, 3.1rem);
-  }
-
-  .app-page-hero {
-    gap: clamp(6px, 1.4svh, 10px);
-    padding: 90px 18px 18px;
-  }
-
-  .app-page-copy .product-lead {
-    font-size: 0.94rem;
-    line-height: 1.56;
-  }
-
-  .app-page-media {
-    width: min(300px, 76vw, 40svh);
-    max-width: 100%;
-  }
-
   .app-final-cta .btn-gradient {
     width: 100%;
   }
@@ -4040,11 +3916,6 @@ body.has-screenshot-lightbox {
 
   .focus-landing .app-content-section {
     margin-top: 62px;
-  }
-
-  .focus-hero {
-    padding: 36px 18px 24px;
-    gap: 0;
   }
 
   .focus-card-grid {
