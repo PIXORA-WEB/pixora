@@ -60,6 +60,16 @@ a {
   color: inherit;
 }
 
+a,
+button,
+[role="button"],
+input,
+textarea,
+select,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
 button,
 input,
 textarea,
@@ -2343,7 +2353,7 @@ main:not(.product-page):not(.legal-page)::before {
   cursor: pointer;
   opacity: 0;
   isolation: isolate;
-  transition: opacity 240ms ease;
+  transition: opacity 240ms ease, transform 280ms ease;
   animation-duration: 920ms;
   animation-delay: var(--intro-delay);
   animation-fill-mode: forwards;
@@ -2367,7 +2377,6 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .hero-phone:focus-visible {
-  outline: 0;
   z-index: 8;
 }
 
@@ -2481,34 +2490,6 @@ main:not(.product-page):not(.legal-page)::before {
   .hero-phone:hover .hero-phone-overlay {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  .hero-phone.is-selected {
-    z-index: 7;
-  }
-
-  .hero-phone.is-selected::before {
-    opacity: 0.78;
-  }
-
-  .hero-phone.is-selected .hero-phone-inner {
-    transform: translateY(-4px) scale(1.01);
-  }
-
-  .hero-phone.is-selected .hero-phone-overlay {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .hero-phone-cta-desktop {
-    display: none;
-  }
-
-  .hero-phone-cta-mobile {
-    display: block;
   }
 }
 
@@ -3595,7 +3576,7 @@ body.has-screenshot-lightbox {
 
   .app-page-hero {
     gap: 14px;
-    padding: 92px 0 34px;
+    padding: 94px 18px 20px;
   }
 
   .app-page-copy .product-lead {

@@ -55,7 +55,6 @@ const PIXORA_APPS = {
     heroAlt: "PIXORA Budget app screen",
     cta: "Explore Budget",
     primaryCta: "See how it works",
-    secondaryCta: "Contact PIXORA",
     finalCtaHeading: "Download PIXORA Budget",
     finalCtaText: "Available on Google Play. Search PIXORA Budget to start managing your money.",
     finalCtaButton: "Search on Google Play",
@@ -142,7 +141,6 @@ const PIXORA_APPS = {
     heroAlt: "PIXORA Track app screen",
     cta: "Explore Track",
     primaryCta: "See how it works",
-    secondaryCta: "Contact PIXORA",
     finalCtaHeading: "Download PIXORA Track",
     finalCtaText: "Available on Google Play. Search PIXORA Track to track your business finances.",
     finalCtaButton: "Search on Google Play",
@@ -229,7 +227,6 @@ const PIXORA_APPS = {
     heroAlt: "PIXORA Play app screen",
     cta: "Explore Play",
     primaryCta: "See activities",
-    secondaryCta: "Contact PIXORA",
     finalCtaHeading: "Download PIXORA Play",
     finalCtaText: "Available on Google Play. Search PIXORA Play and start creating.",
     finalCtaButton: "Search on Google Play",
@@ -415,48 +412,6 @@ function createHeroPhone(app, position) {
   return link;
 }
 
-function initHeroPhoneTaps() {
-  const stage = document.querySelector("[data-hero-phones]");
-  if (!stage) return;
-
-  const prefersTapPreview = window.matchMedia("(hover: none), (pointer: coarse)");
-
-  const clearSelectedPhone = () => {
-    stage.querySelectorAll(".hero-phone.is-selected").forEach((phone) => {
-      phone.classList.remove("is-selected");
-      phone.setAttribute("aria-expanded", "false");
-    });
-  };
-
-  stage.querySelectorAll(".hero-phone").forEach((phone) => {
-    phone.setAttribute("aria-expanded", "false");
-
-    phone.addEventListener("click", (event) => {
-      if (event.detail === 0) return;
-      if (!prefersTapPreview.matches) return;
-
-      const isSelected = phone.classList.contains("is-selected");
-      const tappedBadge = event.target.closest(".hero-phone-overlay");
-
-      if (!isSelected || !tappedBadge) {
-        event.preventDefault();
-        clearSelectedPhone();
-        phone.classList.add("is-selected");
-        phone.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!prefersTapPreview.matches || stage.contains(event.target)) return;
-    clearSelectedPhone();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") clearSelectedPhone();
-  });
-}
-
 function renderHeroSection() {
   const mount = document.querySelector("[data-hero-phones]");
   if (!mount) return;
@@ -465,7 +420,6 @@ function renderHeroSection() {
     createHeroPhone(PIXORA_APPS.budget, "budget"),
     createHeroPhone(PIXORA_APPS.play, "play")
   );
-  initHeroPhoneTaps();
 }
 
 function renderAppCards() {
@@ -518,7 +472,6 @@ function renderAppPage() {
           <p class="product-lead">${app.description}</p>
           <div class="app-page-actions">
             <a class="btn-gradient" href="#features">${app.primaryCta}</a>
-          <a class="btn-ghost" href="../index.html#contact">${app.secondaryCta}</a>
           </div>
         </div>
         <div class="app-page-media">
