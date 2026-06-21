@@ -3710,8 +3710,8 @@ body.has-screenshot-lightbox {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-    padding-top: 104px;
-    gap: 30px;
+    padding-top: 84px;
+    gap: 28px;
   }
 
   .focus-hero-copy,
@@ -3726,7 +3726,7 @@ body.has-screenshot-lightbox {
   }
 
   .focus-hero-media {
-    width: min(320px, 76vw);
+    width: min(300px, 68vw, calc(48vh * 1480 / 2800));
   }
 
   .focus-trust-section {
@@ -3960,27 +3960,37 @@ body.has-screenshot-lightbox {
 
   .focus-hero {
     min-height: auto;
-    padding: 92px 18px 24px;
+    padding: 74px 18px 18px;
+    gap: 38px;
   }
 
   .focus-hero h1 {
     max-width: min(90vw, 720px);
-    font-size: clamp(2.35rem, 11vw, 3.35rem);
+    font-size: clamp(3rem, 11vw, 3.625rem);
+    line-height: 1;
   }
 
   .focus-hero .product-lead {
-    font-size: 0.96rem;
-    line-height: 1.58;
-    margin-top: 18px;
+    max-width: min(90vw, 620px);
+    font-size: clamp(1.25rem, 4.8vw, 1.375rem);
+    line-height: 1.4;
+    margin-top: 20px;
+  }
+
+  .focus-hero-actions {
+    gap: 14px;
+    margin-top: 26px;
   }
 
   .focus-hero-actions .btn-gradient {
     width: 100%;
-    min-height: 48px;
+    min-height: 52px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .focus-hero-media {
-    width: min(280px, 76vw);
+    width: min(260px, 66vw, calc(44vh * 1480 / 2800));
   }
 
   .focus-card-grid {
