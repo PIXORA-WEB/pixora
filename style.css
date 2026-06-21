@@ -251,6 +251,22 @@ select:focus-visible {
   color: rgba(255, 255, 255, 0.85);
 }
 
+.home-page .pricing-head .tag {
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, #00aaff, #00ff9c, #ff8c00, #ff3c3c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
 .btn-gradient {
   display: inline-flex;
   align-items: center;
@@ -2583,10 +2599,12 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .apple-product-play {
-  color: #21182e;
+  color: #fff;
   background:
-    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.55), transparent 25%),
-    linear-gradient(135deg, #fff5f9 0%, #ffe0f0 38%, #e8dcff 100%);
+    radial-gradient(circle at 16% 18%, rgba(255, 107, 223, 0.28), transparent 34%),
+    radial-gradient(circle at 84% 14%, rgba(124, 92, 255, 0.26), transparent 32%),
+    radial-gradient(circle at 50% 88%, rgba(255, 107, 223, 0.12), transparent 34%),
+    linear-gradient(135deg, #171024 0%, #26143a 48%, var(--apps-bg) 100%);
 }
 
 .apple-product-track {
@@ -2630,8 +2648,8 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .apple-product-play .product-kicker {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(80, 47, 120, 0.14);
+  background: rgba(255, 107, 223, 0.14);
+  border-color: rgba(255, 107, 223, 0.22);
 }
 
 .apple-product-copy h2 {
@@ -2650,7 +2668,7 @@ main:not(.product-page):not(.legal-page)::before {
 
 .apple-product-play .apple-product-copy p,
 .apple-product-play .apple-card-points {
-  color: rgba(33, 24, 46, 0.72);
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .apple-card-points {
@@ -2676,8 +2694,8 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .apple-product-play .apple-card-points span {
-  background: rgba(255, 255, 255, 0.58);
-  border-color: rgba(80, 47, 120, 0.10);
+  background: rgba(255, 107, 223, 0.11);
+  border-color: rgba(255, 107, 223, 0.16);
 }
 
 .apple-product-copy .panel-cta {
@@ -3599,10 +3617,68 @@ body.has-screenshot-lightbox {
   }
 
   .why-grid,
-  .app-card-list,
   .outcome-grid,
   .how-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .app-card-list {
+    grid-template-columns: 1fr;
+    width: min(100% - 44px, 720px);
+    gap: 26px;
+  }
+
+  .apple-product {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .apple-product-inner {
+    grid-template-rows: auto auto;
+  }
+
+  .apple-product-media {
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    padding: 28px 22px 0;
+    background: transparent;
+  }
+
+  .apple-product-media img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .apple-product-copy {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .apple-product-copy h2 {
+    max-width: 14ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .apple-product-copy p {
+    max-width: 48ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .apple-product-copy .panel-cta {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .app-intro-section {
@@ -3657,19 +3733,6 @@ body.has-screenshot-lightbox {
 
   .pricing-head {
     margin-bottom: 34px;
-  }
-
-  .pricing-head .tag {
-    min-width: 0;
-    height: auto;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.62);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
   }
 
   .pricing-head h2 {
