@@ -33,6 +33,7 @@ html {
   --radius-lg: 24px;
   --radius-md: 20px;
   --radius-sm: 16px;
+  --header-height: 72px;
 }
 
 body {
@@ -1669,6 +1670,10 @@ main:not(.product-page):not(.legal-page)::after {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --header-height: 86px;
+  }
+
   .header,
   .footer {
     padding-left: 14px;
@@ -3404,7 +3409,12 @@ body.has-screenshot-lightbox {
   background: transparent;
 }
 
-.focus-hero-media img {
+.focus-mobile-hero-shot {
+  display: none;
+}
+
+.focus-hero-media img,
+.focus-mobile-hero-shot img {
   display: block;
   width: 100%;
   height: 100%;
@@ -3735,6 +3745,80 @@ body.has-screenshot-lightbox {
 
 }
 
+@media (max-width: 768px) {
+  .focus-hero {
+    min-height: calc(100svh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 42px 18px 28px;
+    text-align: center;
+  }
+
+  .focus-hero-media {
+    display: none;
+  }
+
+  .focus-hero-copy {
+    max-width: min(90vw, 680px);
+  }
+
+  .focus-hero h1 {
+    max-width: min(90vw, 680px);
+    font-size: clamp(2.625rem, 11vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .focus-hero .product-lead {
+    max-width: min(90vw, 620px);
+    margin-top: 20px;
+    font-size: clamp(1.125rem, 5vw, 1.375rem);
+    line-height: 1.4;
+  }
+
+  .focus-hero-actions {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .focus-hero-actions .btn-gradient {
+    width: 100%;
+    min-height: 52px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .focus-mobile-hero-shot {
+    display: block;
+    width: min(72vw, 360px);
+    max-height: 58svh;
+    aspect-ratio: 1480 / 2800;
+    margin: 0 auto clamp(-150px, -18svh, -86px);
+    background: transparent;
+    pointer-events: none;
+    transform: translate3d(0, calc(var(--focus-shot-progress, 0) * -30svh), 0);
+    transition: transform 0.08s linear;
+    will-change: transform;
+    position: relative;
+    z-index: 1;
+  }
+
+  .focus-mobile-hero-shot img {
+    max-height: 58svh;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .focus-mobile-hero-shot {
+    margin: 18px auto 0;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
 @media (max-width: 960px) {
   .hero-section {
     --phone-w-main: clamp(235px, 34vw, 310px);
@@ -3959,38 +4043,8 @@ body.has-screenshot-lightbox {
   }
 
   .focus-hero {
-    min-height: auto;
-    padding: 74px 18px 18px;
-    gap: 38px;
-  }
-
-  .focus-hero h1 {
-    max-width: min(90vw, 720px);
-    font-size: clamp(3rem, 11vw, 3.625rem);
-    line-height: 1;
-  }
-
-  .focus-hero .product-lead {
-    max-width: min(90vw, 620px);
-    font-size: clamp(1.25rem, 4.8vw, 1.375rem);
-    line-height: 1.4;
-    margin-top: 20px;
-  }
-
-  .focus-hero-actions {
-    gap: 14px;
-    margin-top: 26px;
-  }
-
-  .focus-hero-actions .btn-gradient {
-    width: 100%;
-    min-height: 52px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .focus-hero-media {
-    width: min(260px, 66vw, calc(44vh * 1480 / 2800));
+    padding: 36px 18px 24px;
+    gap: 0;
   }
 
   .focus-card-grid {
