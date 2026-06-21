@@ -28,16 +28,11 @@ const APP_CARD_IMAGES = {
   play: HERO_IMAGES.play[0],
 };
 
-const SITE_BASE_URL = new URL(".", document.currentScript?.src || window.location.href);
 const PIXORA_BUDGET_OPEN_TEST_URL = "https://play.google.com/apps/testing/com.pixora.budgetapp";
 // TODO: Verify the final PIXORA Track Google Play Open Testing URL before publishing.
 const PIXORA_TRACK_OPEN_TEST_URL = "https://play.google.com/apps/testing/com.pixora.trackapp";
 // TODO: Verify the final PIXORA Play Google Play Open Testing URL before publishing.
 const PIXORA_PLAY_OPEN_TEST_URL = "https://play.google.com/apps/testing/com.pixora.play";
-
-function siteAsset(path) {
-  return new URL(path.replace(/^\/+/, ""), SITE_BASE_URL).href;
-}
 
 const PIXORA_APPS = {
   budget: {
@@ -140,27 +135,27 @@ const PIXORA_APPS = {
     carouselTitle: "App screens",
     carouselScreenshots: [
       {
-        image: siteAsset("images/budget/home-overview.webp"),
+        image: HERO_IMAGES.budget[0],
         label: "Home / Budget Overview",
         alt: "PIXORA Budget home screen showing cash balance, available to spend and monthly performance.",
       },
       {
-        image: siteAsset("images/budget/spending-plans.webp"),
+        image: HERO_IMAGES.budget[1],
         label: "Spending Plans",
         alt: "PIXORA Budget spending plans screen for tracking planned monthly spending.",
       },
       {
-        image: siteAsset("images/budget/transactions.webp"),
+        image: HERO_IMAGES.budget[2],
         label: "Transactions",
         alt: "PIXORA Budget transactions screen for reviewing income, expenses and transfers.",
       },
       {
-        image: siteAsset("images/budget/investments.webp"),
+        image: HERO_IMAGES.budget[3],
         label: "Investments",
         alt: "PIXORA Budget investments screen showing investment balances and progress.",
       },
       {
-        image: siteAsset("images/budget/insights-charts.webp"),
+        image: HERO_IMAGES.budget[4],
         label: "Insights & Charts",
         alt: "PIXORA Budget insights and charts screen showing spending performance.",
       },
@@ -266,27 +261,27 @@ const PIXORA_APPS = {
     carouselTitle: "App screens",
     carouselScreenshots: [
       {
-        image: siteAsset("images/track/dashboard.webp"),
+        image: HERO_IMAGES.track[0],
         label: "Dashboard",
         alt: "PIXORA Track dashboard showing cash position, available cash, pending outgoings and performance.",
       },
       {
-        image: siteAsset("images/track/transactions.webp"),
+        image: HERO_IMAGES.track[1],
         label: "Transactions",
         alt: "PIXORA Track transactions screen showing business income, expenses and activity.",
       },
       {
-        image: siteAsset("images/track/profit-loss.webp"),
+        image: HERO_IMAGES.track[2],
         label: "Profit & Loss",
         alt: "PIXORA Track profit and loss screen showing revenue, expenses and net profit.",
       },
       {
-        image: siteAsset("images/track/balance-sheet.webp"),
+        image: HERO_IMAGES.track[3],
         label: "Balance Sheet",
         alt: "PIXORA Track balance sheet screen showing business financial position.",
       },
       {
-        image: siteAsset("images/track/cash-banks.webp"),
+        image: HERO_IMAGES.track[4],
         label: "Cash / Banks",
         alt: "PIXORA Track cash and banks screen showing business bank balances.",
       },
@@ -393,27 +388,27 @@ const PIXORA_APPS = {
     carouselTitle: "App screens",
     carouselScreenshots: [
       {
-        image: siteAsset("images/play/home.webp"),
+        image: HERO_IMAGES.play[0],
         label: "Home",
         alt: "PIXORA Play home screen showing colouring, drawing and puzzle activities.",
       },
       {
-        image: siteAsset("images/play/colouring.webp"),
+        image: HERO_IMAGES.play[1],
         label: "Colouring",
         alt: "PIXORA Play colouring screen showing themed colouring packs.",
       },
       {
-        image: siteAsset("images/play/drawing.webp"),
+        image: HERO_IMAGES.play[2],
         label: "Drawing",
         alt: "PIXORA Play drawing screen with brushes, colours and stamps.",
       },
       {
-        image: siteAsset("images/play/memory-cards.webp"),
+        image: HERO_IMAGES.play[3],
         label: "Memory Cards",
         alt: "PIXORA Play memory cards puzzle screen.",
       },
       {
-        image: siteAsset("images/play/maze-puzzles.webp"),
+        image: HERO_IMAGES.play[4],
         label: "Maze / Puzzles",
         alt: "PIXORA Play puzzle screen showing maze and challenge activities.",
       },
