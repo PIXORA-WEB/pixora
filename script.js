@@ -29,6 +29,11 @@ const APP_CARD_IMAGES = {
 };
 
 const SITE_BASE_URL = new URL(".", document.currentScript?.src || window.location.href);
+const PIXORA_BUDGET_OPEN_TEST_URL = "https://play.google.com/apps/testing/com.pixora.budgetapp";
+// TODO: Verify the final PIXORA Track Google Play Open Testing URL before publishing.
+const PIXORA_TRACK_OPEN_TEST_URL = "https://play.google.com/apps/testing/com.pixora.trackapp";
+// TODO: Verify the final PIXORA Play Google Play Open Testing URL before publishing.
+const PIXORA_PLAY_OPEN_TEST_URL = "https://play.google.com/apps/testing/com.pixora.play";
 
 function siteAsset(path) {
   return new URL(path.replace(/^\/+/, ""), SITE_BASE_URL).href;
@@ -44,42 +49,51 @@ const PIXORA_APPS = {
     pageTitle: "PIXORA Budget | Personal Finance, Budgeting and Spending Plans",
     eyebrow: "PIXORA BUDGET",
     kicker: "Personal finance",
-    headline: "Know what you can spend with confidence.",
-    lead: "Plan spending, track accounts and keep investments, loans and mortgages visible in one calm personal finance app.",
+    headline: "Know exactly what you can safely spend.",
+    lead: "PIXORA Budget helps you separate everyday spending money from savings, investments and future commitments, so you can manage your money with confidence.",
     description:
-      "PIXORA Budget helps you understand available cash, planned spending, investments and debt without losing sight of everyday money.",
+      "PIXORA Budget helps you separate everyday spending money from savings, investments and future commitments, so you can manage your money with confidence.",
     price: "€4.99",
     priceNote: "Personal budgeting app",
     image: APP_CARD_IMAGES.budget,
     heroImages: HERO_IMAGES.budget,
     heroAlt: "PIXORA Budget app screen",
-    cta: "Explore Budget",
-    primaryCta: "See how it works",
-    finalCtaHeading: "Download PIXORA Budget",
-    finalCtaText: "Available on Google Play. Search PIXORA Budget to start managing your money.",
-    finalCtaButton: "Search on Google Play",
+    cta: "Try PIXORA Budget",
+    primaryCta: "Try PIXORA Budget",
+    ctaUrl: PIXORA_BUDGET_OPEN_TEST_URL,
+    ctaNote: "PIXORA Budget is currently available on Google Play as Open Testing.",
+    whyLabel: "Why PIXORA Budget",
+    whyHeading: "Budgeting that protects the money you need later.",
+    keyFeaturesHeading: "The essentials, kept close.",
+    howHeading: "Plan, understand and review.",
     features: [
       "See available cash clearly",
       "Plan monthly spending",
       "Track investments and debt",
     ],
-    whatItIs:
-      "PIXORA Budget brings personal accounts, income, spending, transfers, plans, investments and debt into one organised money view.",
-    whoFor:
-      "For people who want a practical way to understand everyday cash, planned spending and longer-term financial commitments.",
     whyPeopleUseIt: [
-      "To see what is actually available to spend after protected balances and plans are considered.",
-      "To compare monthly spending against plans before small habits become expensive surprises.",
-      "To keep investments, loans and mortgages visible beside daily money decisions.",
-      "To use local data, backup options and app lock controls for a more private finance routine.",
+      {
+        title: "Know what's safe to spend",
+        text: "Separate everyday spending money from savings, investments and protected balances.",
+      },
+      {
+        title: "Plan ahead",
+        text: "Create monthly spending plans and compare actual spending against your plans.",
+      },
+      {
+        title: "See the full picture",
+        text: "Keep accounts, loans, mortgages, investments and cash flow visible in one place.",
+      },
     ],
     keyFeatures: [
-      "See spendable cash clearly",
-      "Track income, expenses and transfers",
-      "Plan monthly spending by category",
-      "Keep investments visible",
-      "Follow loan and mortgage progress",
-      "Review insights, charts, backup and PIN lock",
+      { icon: "$", label: "Spendable cash" },
+      { icon: "+/-", label: "Income, expenses and transfers" },
+      { icon: "01", label: "Monthly spending plans" },
+      { icon: "%", label: "Investments" },
+      { icon: "L", label: "Loans and mortgages" },
+      { icon: "CH", label: "Insights and charts" },
+      { icon: "BK", label: "Backup options" },
+      { icon: "PIN", label: "PIN lock" },
     ],
     howItWorks: [
       {
@@ -91,34 +105,65 @@ const PIXORA_APPS = {
         text: "Separate spendable cash from savings, investments and protected balances.",
       },
       {
-        title: "Stay close to progress",
+        title: "Review your progress",
         text: "Review spending, investments, loans, mortgages and monthly movement.",
       },
     ],
     featureCallouts: [
       {
         title: "Cash balance",
-        text: "See total account, savings and investment balances converted into your base currency.",
+        text: "See your total bank, savings and investment balances.",
       },
       {
         title: "Available to spend",
-        text: "Keep spendable money separate from savings, investments and protected balances.",
+        text: "Understand what money is actually spendable.",
       },
       {
         title: "Monthly performance",
-        text: "Review what is left after income and spending for the selected month.",
+        text: "Review what is left after income and spending.",
       },
       {
         title: "Quick actions",
-        text: "Use the add button and bottom navigation to move between daily money tasks.",
+        text: "Add transactions and move between daily money tasks.",
       },
     ],
-    supportTitle: "Explore more of PIXORA Budget",
-    supportScreenshots: [
-      { image: HERO_IMAGES.budget[1], label: "Spending Plans" },
-      { image: HERO_IMAGES.budget[3], label: "Transactions" },
-      { image: HERO_IMAGES.budget[2], label: "Investments" },
-      { image: HERO_IMAGES.budget[4], label: "Insights & charts" },
+    highlightsLabel: "Main screen highlights",
+    highlightsTitle: "Main screen highlights",
+    privacyTitle: "Your data stays yours.",
+    privacyText:
+      "PIXORA Budget is designed to help you manage your money privately with local data, backup options and app lock controls.",
+    privacyPoints: [
+      "Local-first money tracking",
+      "Backup options",
+      "PIN lock support",
+    ],
+    carouselTitle: "App screens",
+    carouselScreenshots: [
+      {
+        image: siteAsset("images/budget/home-overview.webp"),
+        label: "Home / Budget Overview",
+        alt: "PIXORA Budget home screen showing cash balance, available to spend and monthly performance.",
+      },
+      {
+        image: siteAsset("images/budget/spending-plans.webp"),
+        label: "Spending Plans",
+        alt: "PIXORA Budget spending plans screen for tracking planned monthly spending.",
+      },
+      {
+        image: siteAsset("images/budget/transactions.webp"),
+        label: "Transactions",
+        alt: "PIXORA Budget transactions screen for reviewing income, expenses and transfers.",
+      },
+      {
+        image: siteAsset("images/budget/investments.webp"),
+        label: "Investments",
+        alt: "PIXORA Budget investments screen showing investment balances and progress.",
+      },
+      {
+        image: siteAsset("images/budget/insights-charts.webp"),
+        label: "Insights & Charts",
+        alt: "PIXORA Budget insights and charts screen showing spending performance.",
+      },
     ],
   },
   track: {
@@ -131,7 +176,7 @@ const PIXORA_APPS = {
     eyebrow: "PIXORA TRACK",
     kicker: "Business finance",
     headline: "See your business position clearly.",
-    lead: "Track income, expenses, unpaid items, cash, tax amounts and reports without falling back into spreadsheet guesswork.",
+    lead: "PIXORA Track helps small businesses follow cash, unpaid items, performance and core finance reports in one focused workflow.",
     description:
       "PIXORA Track helps small businesses follow cash, performance, unpaid items and core finance reports in one focused workflow.",
     price: "€9.99",
@@ -139,33 +184,42 @@ const PIXORA_APPS = {
     image: APP_CARD_IMAGES.track,
     heroImages: HERO_IMAGES.track,
     heroAlt: "PIXORA Track app screen",
-    cta: "Explore Track",
-    primaryCta: "See how it works",
-    finalCtaHeading: "Download PIXORA Track",
-    finalCtaText: "Available on Google Play. Search PIXORA Track to track your business finances.",
-    finalCtaButton: "Search on Google Play",
+    cta: "Try PIXORA Track",
+    primaryCta: "Try PIXORA Track",
+    ctaUrl: PIXORA_TRACK_OPEN_TEST_URL,
+    ctaNote: "PIXORA Track is currently available on Google Play as Open Testing.",
+    whyLabel: "Why PIXORA Track",
+    whyHeading: "Business finance that stays easy to review.",
+    keyFeaturesHeading: "Everything important stays visible.",
+    howHeading: "Record, monitor and stay organised.",
     features: [
       "Understand cash position",
       "Track paid and unpaid activity",
       "Review business reports",
     ],
-    whatItIs:
-      "PIXORA Track is a business finance tracker for paid transactions, unpaid items, bank balances, tax amounts and financial reports.",
-    whoFor:
-      "For small business owners and operators who need a clear day-to-day view of cash, activity and performance.",
     whyPeopleUseIt: [
-      "To separate paid transactions from unpaid income and outgoings.",
-      "To understand cash position across business bank accounts.",
-      "To review revenue, expenses, net profit and balance sheet position.",
-      "To keep sales tax, exports and financial-year close workflows organised.",
+      {
+        title: "Track business cash",
+        text: "See cash balances, available cash and pending outgoings across your business.",
+      },
+      {
+        title: "Stay on top of unpaid items",
+        text: "Separate paid transactions from unpaid income and expenses so nothing gets missed.",
+      },
+      {
+        title: "Review performance clearly",
+        text: "Follow revenue, expenses, net profit and balance sheet position in one place.",
+      },
     ],
     keyFeatures: [
-      "Track paid income and expenses",
-      "Stay on top of unpaid income and expenses",
-      "Track cash across business accounts",
-      "Understand profit and financial position",
-      "Keep tax amounts visible",
-      "Export, back up and close financial years",
+      { icon: "+/-", label: "Paid income and expenses" },
+      { icon: "UP", label: "Unpaid income and expenses" },
+      { icon: "$", label: "Cash and bank balances" },
+      { icon: "P&L", label: "Profit & loss" },
+      { icon: "BS", label: "Balance sheet" },
+      { icon: "TAX", label: "Sales tax tracking" },
+      { icon: "EX", label: "Exports and backups" },
+      { icon: "FY", label: "Financial year close workflow" },
     ],
     howItWorks: [
       {
@@ -199,12 +253,43 @@ const PIXORA_APPS = {
         text: "Quickly add new business activity from the dashboard.",
       },
     ],
-    supportTitle: "Explore more of PIXORA Track",
-    supportScreenshots: [
-      { image: HERO_IMAGES.track[4], label: "Transactions" },
-      { image: HERO_IMAGES.track[1], label: "Profit & Loss" },
-      { image: HERO_IMAGES.track[2], label: "Balance Sheet" },
-      { image: HERO_IMAGES.track[3], label: "Cash / Banks" },
+    highlightsLabel: "Main screen highlights",
+    highlightsTitle: "Main screen highlights",
+    privacyTitle: "Business records stay organised.",
+    privacyText:
+      "PIXORA Track is designed to help small businesses keep finance records clear, backed up and easy to review.",
+    privacyPoints: [
+      "Backup options",
+      "Export support",
+      "Organised financial-year workflows",
+    ],
+    carouselTitle: "App screens",
+    carouselScreenshots: [
+      {
+        image: siteAsset("images/track/dashboard.webp"),
+        label: "Dashboard",
+        alt: "PIXORA Track dashboard showing cash position, available cash, pending outgoings and performance.",
+      },
+      {
+        image: siteAsset("images/track/transactions.webp"),
+        label: "Transactions",
+        alt: "PIXORA Track transactions screen showing business income, expenses and activity.",
+      },
+      {
+        image: siteAsset("images/track/profit-loss.webp"),
+        label: "Profit & Loss",
+        alt: "PIXORA Track profit and loss screen showing revenue, expenses and net profit.",
+      },
+      {
+        image: siteAsset("images/track/balance-sheet.webp"),
+        label: "Balance Sheet",
+        alt: "PIXORA Track balance sheet screen showing business financial position.",
+      },
+      {
+        image: siteAsset("images/track/cash-banks.webp"),
+        label: "Cash / Banks",
+        alt: "PIXORA Track cash and banks screen showing business bank balances.",
+      },
     ],
   },
   play: {
@@ -217,7 +302,7 @@ const PIXORA_APPS = {
     eyebrow: "PIXORA PLAY",
     kicker: "Family creativity",
     headline: "Creative screen time with room to play.",
-    lead: "Colour, draw and solve playful puzzles in a bright family-friendly app with saved artwork and level progress.",
+    lead: "PIXORA Play gives families colouring, drawing and puzzle activities with saved creativity and level-based challenges.",
     description:
       "PIXORA Play gives families colouring, drawing and puzzle activities with saved creativity and level-based challenges.",
     price: "Free",
@@ -225,33 +310,43 @@ const PIXORA_APPS = {
     image: APP_CARD_IMAGES.play,
     heroImages: HERO_IMAGES.play,
     heroAlt: "PIXORA Play app screen",
-    cta: "Explore Play",
-    primaryCta: "See activities",
-    finalCtaHeading: "Download PIXORA Play",
-    finalCtaText: "Available on Google Play. Search PIXORA Play and start creating.",
-    finalCtaButton: "Search on Google Play",
+    cta: "Try PIXORA Play",
+    primaryCta: "Try PIXORA Play",
+    ctaUrl: PIXORA_PLAY_OPEN_TEST_URL,
+    ctaNote: "PIXORA Play is currently available on Google Play as Open Testing.",
+    whyLabel: "Why PIXORA Play",
+    whyHeading: "Creative activities in one focused family app.",
+    keyFeaturesHeading: "Creative tools and puzzle play.",
+    howHeading: "Choose, create and keep progressing.",
     features: [
       "Colour and draw freely",
       "Play puzzle challenges",
       "Save progress locally",
     ],
-    whatItIs:
-      "PIXORA Play combines colouring packs, a drawing canvas and puzzle games in one creative app for families.",
-    whoFor:
-      "For families looking for creative activities, saved artwork and gentle puzzle challenges.",
     whyPeopleUseIt: [
-      "To give children a simple space for colouring and drawing.",
-      "To mix creative activities with memory, maze and rope puzzle challenges.",
-      "To keep artwork and puzzle progress saved locally.",
-      "To offer a brighter, more focused play experience with a premium ad-free option.",
+      {
+        title: "Creative play in one place",
+        text: "Colouring, drawing and puzzle activities sit together in one simple family app.",
+      },
+      {
+        title: "Made for young creators",
+        text: "Give children a focused space to create, solve and keep progressing.",
+      },
+      {
+        title: "Saved progress",
+        text: "Keep artwork and puzzle progress saved locally so children can come back later.",
+      },
     ],
     keyFeatures: [
-      "Choose themed colouring packs",
-      "Save colouring pages and drawings",
-      "Create with brushes, colours and stamps",
-      "Play memory, maze and rope puzzles",
-      "Keep level progress locally",
-      "Remove ads with Premium",
+      { icon: "PK", label: "Themed colouring packs" },
+      { icon: "SV", label: "Saved colouring pages" },
+      { icon: "DR", label: "Drawing canvas" },
+      { icon: "BR", label: "Brushes, colours and stamps" },
+      { icon: "MC", label: "Memory cards" },
+      { icon: "MZ", label: "Maze puzzles" },
+      { icon: "RP", label: "Rope puzzles" },
+      { icon: "LP", label: "Local progress" },
+      { icon: "AD", label: "Premium ad-free option" },
     ],
     howItWorks: [
       {
@@ -285,12 +380,43 @@ const PIXORA_APPS = {
         text: "Jump into playful challenges for memory, mazes and rope puzzles.",
       },
     ],
-    supportTitle: "Explore more of PIXORA Play",
-    supportScreenshots: [
-      { image: HERO_IMAGES.play[1], label: "Colouring" },
-      { image: HERO_IMAGES.play[2], label: "Drawing" },
-      { image: HERO_IMAGES.play[4], label: "Memory Cards" },
-      { image: HERO_IMAGES.play[3], label: "Maze / Puzzles" },
+    highlightsLabel: "Main screen highlights",
+    highlightsTitle: "Main screen highlights",
+    privacyTitle: "Creative progress stays saved.",
+    privacyText:
+      "PIXORA Play is designed to keep artwork and puzzle progress saved locally, giving families a simple creative space.",
+    privacyPoints: [
+      "Saved artwork",
+      "Local progress",
+      "Premium ad-free option",
+    ],
+    carouselTitle: "App screens",
+    carouselScreenshots: [
+      {
+        image: siteAsset("images/play/home.webp"),
+        label: "Home",
+        alt: "PIXORA Play home screen showing colouring, drawing and puzzle activities.",
+      },
+      {
+        image: siteAsset("images/play/colouring.webp"),
+        label: "Colouring",
+        alt: "PIXORA Play colouring screen showing themed colouring packs.",
+      },
+      {
+        image: siteAsset("images/play/drawing.webp"),
+        label: "Drawing",
+        alt: "PIXORA Play drawing screen with brushes, colours and stamps.",
+      },
+      {
+        image: siteAsset("images/play/memory-cards.webp"),
+        label: "Memory Cards",
+        alt: "PIXORA Play memory cards puzzle screen.",
+      },
+      {
+        image: siteAsset("images/play/maze-puzzles.webp"),
+        label: "Maze / Puzzles",
+        alt: "PIXORA Play puzzle screen showing maze and challenge activities.",
+      },
     ],
   },
 };
@@ -340,6 +466,150 @@ function renderSupportSection(app) {
   }
 
   return "";
+}
+
+function renderExternalCta(app, className = "btn-gradient") {
+  return `
+    <a class="${className}" href="${app.ctaUrl}" target="_blank" rel="noopener noreferrer">${app.cta}</a>
+  `;
+}
+
+function renderFocusedProductPage(app) {
+  const carouselTitleId = `${app.key}ScreensTitle`;
+
+  return `
+    <div class="product-page-inner focus-landing">
+      <section class="focus-hero">
+        <div class="focus-hero-copy">
+          <h1>${app.headline}</h1>
+          <p class="product-lead">${app.lead}</p>
+          <div class="focus-hero-actions">
+            ${renderExternalCta(app)}
+            <p class="cta-note">${app.ctaNote}</p>
+          </div>
+        </div>
+        <div class="focus-hero-media">
+          <img src="${app.carouselScreenshots[0].image}" srcset="${app.carouselScreenshots[0].image} 1480w" sizes="(max-width: 620px) 72vw, (max-width: 980px) 320px, 360px" alt="${app.carouselScreenshots[0].alt}" width="1480" height="2800" loading="eager" decoding="async" fetchpriority="high" />
+        </div>
+      </section>
+
+      <section class="app-content-section focus-why-section" id="why">
+        <div class="section-head-left">
+          <span class="section-label">${app.whyLabel}</span>
+          <h2>${app.whyHeading}</h2>
+        </div>
+        <div class="focus-card-grid">
+          ${app.whyPeopleUseIt.map((item) => `
+            <article class="focus-value-card">
+              <h3>${item.title}</h3>
+              <p>${item.text}</p>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="app-content-section focus-key-section">
+        <div class="section-head-left">
+          <span class="section-label">Key features</span>
+          <h2>${app.keyFeaturesHeading}</h2>
+        </div>
+        <div class="focus-feature-list">
+          ${app.keyFeatures.map((feature) => `
+            <span class="focus-feature-item">
+              <span aria-hidden="true">${feature.icon}</span>
+              ${feature.label}
+            </span>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="app-content-section app-how-section focus-how-section">
+        <div class="section-head-left">
+          <span class="section-label">How it works</span>
+          <h2>${app.howHeading}</h2>
+        </div>
+        <div class="how-grid">
+          ${app.howItWorks.map((step, index) => `
+            <article class="how-card">
+              <span>${index + 1}</span>
+              <h3>${step.title}</h3>
+              <p>${step.text}</p>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="app-content-section focus-carousel-section" aria-labelledby="${carouselTitleId}">
+        <div class="section-head-left">
+          <span class="section-label">App screens carousel</span>
+          <h2 id="${carouselTitleId}">${app.carouselTitle}</h2>
+        </div>
+        <div class="focus-carousel" data-focus-carousel>
+          <button class="focus-carousel-arrow focus-carousel-prev" type="button" data-carousel-prev aria-label="Previous screenshot">
+            <span aria-hidden="true">&lsaquo;</span>
+          </button>
+          <div class="focus-carousel-track" data-carousel-track>
+            ${app.carouselScreenshots.map((shot, index) => `
+              <figure class="focus-carousel-slide" data-carousel-slide>
+                <img src="${shot.image}" srcset="${shot.image} 1480w" sizes="(max-width: 620px) 300px, (max-width: 980px) 420px, 480px" alt="${shot.alt}" width="1480" height="2800" loading="${index === 0 ? "eager" : "lazy"}" decoding="async"${index === 0 ? " fetchpriority=\"high\"" : ""} />
+                <figcaption>${shot.label}</figcaption>
+              </figure>
+            `).join("")}
+          </div>
+          <button class="focus-carousel-arrow focus-carousel-next" type="button" data-carousel-next aria-label="Next screenshot">
+            <span aria-hidden="true">&rsaquo;</span>
+          </button>
+          <div class="focus-carousel-dots" data-carousel-dots>
+            ${app.carouselScreenshots.map((shot, index) => `
+              <button type="button" data-carousel-dot="${index}" aria-label="Show ${shot.label}"${index === 0 ? " aria-current=\"true\"" : ""}></button>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+
+      ${app.highlightsTitle ? `
+        <section class="app-content-section focus-highlights-section">
+          <div class="section-head-left">
+            <span class="section-label">${app.highlightsLabel}</span>
+            <h2>${app.highlightsTitle}</h2>
+          </div>
+          <div class="focus-card-grid focus-highlight-grid">
+            ${app.featureCallouts.map((item) => `
+              <article class="focus-value-card">
+                <h3>${item.title}</h3>
+                <p>${item.text}</p>
+              </article>
+            `).join("")}
+          </div>
+        </section>
+      ` : ""}
+
+      <section class="app-content-section focus-trust-wrap">
+        <div class="section-head-left">
+          <span class="section-label">Privacy / Trust</span>
+          <h2>${app.privacyTitle}</h2>
+        </div>
+        <div class="focus-trust-section">
+          <div class="focus-trust-copy">
+          <p>${app.privacyText}</p>
+          </div>
+          <div class="focus-trust-points">
+            ${app.privacyPoints.map((point) => `<span>${point}</span>`).join("")}
+          </div>
+        </div>
+      </section>
+
+      ${app.finalCtaHeading ? `
+        <section class="app-final-cta focus-download-cta">
+          <div class="app-final-cta-copy">
+            <h2>${app.finalCtaHeading}</h2>
+            <p>${app.finalCtaText}</p>
+          </div>
+          ${renderExternalCta(app)}
+        </section>
+      ` : ""}
+    </div>
+  `;
 }
 
 function closeMobileNav() {
@@ -498,6 +768,11 @@ function renderAppPage() {
   if (description) description.setAttribute("content", app.description);
 
   mount.classList.add(`pixora-${app.key}-page`);
+  if (app.key === "budget" || app.key === "track" || app.key === "play") {
+    mount.innerHTML = renderFocusedProductPage(app);
+    return;
+  }
+
   mount.innerHTML = `
     <div class="product-page-inner">
       <section class="app-page-hero">
@@ -589,6 +864,61 @@ function renderAppPage() {
       </section>
     </div>
   `;
+}
+
+function initBudgetCarousel() {
+  document.querySelectorAll("[data-focus-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+    const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+    const prev = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    if (!track || !slides.length) return;
+
+    let activeIndex = 0;
+    let scrollTimer = null;
+
+    const setActive = (index) => {
+      activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+      dots.forEach((dot, dotIndex) => {
+        if (dotIndex === activeIndex) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const goTo = (index) => {
+      const nextIndex = Math.max(0, Math.min(index, slides.length - 1));
+      slides[nextIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+      setActive(nextIndex);
+    };
+
+    const syncFromScroll = () => {
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      const closestIndex = slides.reduce((closest, slide, index) => {
+        const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+        const distance = Math.abs(slideCenter - trackCenter);
+        return distance < closest.distance ? { index, distance } : closest;
+      }, { index: activeIndex, distance: Number.POSITIVE_INFINITY }).index;
+      setActive(closestIndex);
+    };
+
+    prev?.addEventListener("click", () => goTo(activeIndex - 1));
+    next?.addEventListener("click", () => goTo(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => goTo(index)));
+    track.addEventListener("scroll", () => {
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(syncFromScroll, 80);
+    }, { passive: true });
+
+    setActive(0);
+  });
 }
 
 function renderSiteFooter() {
@@ -724,6 +1054,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHeroSection();
   renderAppCards();
   renderAppPage();
+  initBudgetCarousel();
   initScreenshotLightbox();
   renderSiteFooter();
   ensureBackToTop();
