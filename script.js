@@ -404,8 +404,7 @@ function createHeroPhone(app, position) {
   overlay.className = "hero-phone-overlay";
   overlay.innerHTML = `
     <strong>${app.name}</strong>
-    <span class="hero-phone-cta-desktop">${app.cta}</span>
-    <span class="hero-phone-cta-mobile">Open ${app.shortName}</span>
+    <span>View page</span>
   `;
 
   link.append(inner, overlay);

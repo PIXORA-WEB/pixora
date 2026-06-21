@@ -2462,8 +2462,24 @@ main:not(.product-page):not(.legal-page)::before {
   font-weight: 700;
 }
 
-.hero-phone-cta-mobile {
-  display: none;
+.hero-phone:active {
+  z-index: 7;
+  transform: var(--base-transform);
+}
+
+.hero-phone:active::before {
+  opacity: 0.82;
+}
+
+.hero-phone:active .hero-phone-inner,
+.hero-phone:focus-visible .hero-phone-inner {
+  transform: translateY(-5px) scale(1.055);
+}
+
+.hero-phone:active .hero-phone-overlay,
+.hero-phone:focus-visible .hero-phone-overlay {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -2482,9 +2498,8 @@ main:not(.product-page):not(.legal-page)::before {
     opacity: 0.82;
   }
 
-  .hero-phone:hover .hero-phone-inner,
-  .hero-phone:focus-visible .hero-phone-inner {
-    transform: translateY(-5px) scale(1.015);
+  .hero-phone:hover .hero-phone-inner {
+    transform: translateY(-5px) scale(1.055);
   }
 
   .hero-phone:hover .hero-phone-overlay {
@@ -2823,10 +2838,20 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .app-page-hero {
+  height: 100svh;
+  min-height: 100svh;
   grid-template-columns: minmax(280px, 0.9fr) minmax(520px, 0.7fr);
   gap: clamp(24px, 5vw, 76px);
   padding: 122px 0 54px;
-  overflow: visible;
+  align-content: center;
+  overflow: hidden;
+}
+
+@supports (height: 100dvh) {
+  .app-page-hero {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
 }
 
 .app-page-copy {
@@ -2869,6 +2894,7 @@ main:not(.product-page):not(.legal-page)::before {
   width: min(clamp(520px, 42vw, 760px), 100%);
   aspect-ratio: 1;
   max-width: 100%;
+  max-height: 100%;
   min-width: 0;
   overflow: visible;
 }
@@ -2886,6 +2912,7 @@ main:not(.product-page):not(.legal-page)::before {
   z-index: 1;
   width: var(--phone-w-main);
   max-width: 100%;
+  max-height: min(74svh, 620px);
   height: auto;
   border-radius: 36px;
   object-fit: contain;
@@ -3354,6 +3381,7 @@ body.has-screenshot-lightbox {
 
   .app-page-hero {
     grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
     justify-items: center;
     text-align: center;
     gap: 24px;
@@ -3419,7 +3447,6 @@ body.has-screenshot-lightbox {
 
 @media (max-width: 900px) {
   .app-page-hero {
-    min-height: 100svh;
     padding: 96px 0 38px;
     gap: 20px;
   }
@@ -3469,7 +3496,7 @@ body.has-screenshot-lightbox {
 
 @media (max-width: 620px) {
   .product-page {
-    --phone-w-main: clamp(205px, 58vw, 280px);
+    --phone-w-main: clamp(165px, min(52vw, 34svh), 250px);
   }
 
   .hero-section {
@@ -3590,7 +3617,7 @@ body.has-screenshot-lightbox {
   }
 
   .app-page-media {
-    width: min(340px, 82vw);
+    width: min(320px, 78vw, 42svh);
     max-width: 100%;
   }
 
