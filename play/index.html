@@ -11,8 +11,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pixora.es/play/" />
   <meta property="og:image" content="https://pixora.es/images/pixora-preview.png" />
-  <link rel="icon" type="image/png" sizes="1024x1024" href="https://images.pixora.es/images/icon-1024.png" />
-  <link rel="apple-touch-icon" href="https://images.pixora.es/images/icon-1024.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.pixora.es" crossorigin />
@@ -21,20 +25,20 @@
 </head>
 <body class="app-detail-site pixora-play-site">
   <header class="header" id="top">
-    <a href="../index.html" class="brand" aria-label="Go to PIXORA homepage">
+    <a href="/" class="brand" aria-label="Go to PIXORA homepage">
       <img src="https://images.pixora.es/images/pixora-logo.png" alt="PIXORA logo" class="logo-img" />
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
     <nav class="nav" id="navMenu">
-      <a href="../index.html#apps">Apps</a>
-      <a href="../budget/index.html">Budget</a>
-      <a href="../track/index.html">Track</a>
-      <a href="../play/index.html">Play</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="/#apps">Apps</a>
+      <a href="/budget/">Budget</a>
+      <a href="/track/">Track</a>
+      <a href="/play/">Play</a>
+      <a href="/#contact">Contact</a>
     </nav>
   </header>
   <main class="product-page" data-app-page="play"></main>
-  <footer class="footer" data-site-footer data-link-prefix="../"></footer>
+  <footer class="footer" data-site-footer></footer>
   <script src="../script.js" defer></script>
 </body>
 </html>
