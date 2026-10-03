@@ -39,7 +39,7 @@ const PIXORA_APPS = {
     key: "budget",
     name: "PIXORA Budget",
     shortName: "Budget",
-    route: "budget/index.html",
+    route: "/budget/",
     tone: "budget",
     pageTitle: "PIXORA Budget | Personal Finance, Budgeting and Spending Plans",
     eyebrow: "PIXORA BUDGET",
@@ -165,7 +165,7 @@ const PIXORA_APPS = {
     key: "track",
     name: "PIXORA Track",
     shortName: "Track",
-    route: "track/index.html",
+    route: "/track/",
     tone: "track",
     pageTitle: "PIXORA Track | Business Finance, Cash Position and Performance",
     eyebrow: "PIXORA TRACK",
@@ -291,7 +291,7 @@ const PIXORA_APPS = {
     key: "play",
     name: "PIXORA Play",
     shortName: "Play",
-    route: "play/index.html",
+    route: "/play/",
     tone: "play",
     pageTitle: "PIXORA Play | Colouring, Drawing and Family Creativity",
     eyebrow: "PIXORA PLAY",
@@ -927,12 +927,11 @@ function initBudgetCarousel() {
 function renderSiteFooter() {
   const footer = document.querySelector("[data-site-footer]");
   if (!footer) return;
-  const prefix = footer.dataset.linkPrefix || "";
 
   footer.innerHTML = `
     <div class="footer-inner">
       <div class="footer-col footer-col-brand">
-        <a href="${prefix}index.html" class="footer-brand" aria-label="Go to PIXORA homepage">
+        <a href="/" class="footer-brand" aria-label="Go to PIXORA homepage">
           <img src="https://images.pixora.es/images/pixora-logo.png" alt="PIXORA logo" class="logo-img" />
         </a>
         <p class="footer-text">
@@ -941,20 +940,20 @@ function renderSiteFooter() {
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="${prefix}index.html#about">About</a>
-        <a href="${prefix}index.html#apps">Apps</a>
-        <a href="${prefix}index.html#contact">Contact</a>
+        <a href="/#about">About</a>
+        <a href="/#apps">Apps</a>
+        <a href="/#contact">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Apps</h4>
-        <a href="${prefix}budget/index.html">PIXORA Budget</a>
-        <a href="${prefix}track/index.html">PIXORA Track</a>
-        <a href="${prefix}play/index.html">PIXORA Play</a>
+        <a href="/budget/">PIXORA Budget</a>
+        <a href="/track/">PIXORA Track</a>
+        <a href="/play/">PIXORA Play</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="${prefix}privacy/index.html">Privacy Policy</a>
-        <a href="${prefix}terms/index.html">Terms &amp; Conditions</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms &amp; Conditions</a>
       </div>
       <div class="footer-col footer-col-contact">
         <h4>Contact</h4>

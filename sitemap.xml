@@ -29,4 +29,12 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://pixora.es/privacy/</loc>
+  </url>
+
+  <url>
+    <loc>https://pixora.es/terms/</loc>
+  </url>
+
 </urlset>
