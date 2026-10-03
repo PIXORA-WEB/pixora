@@ -301,7 +301,7 @@ const PIXORA_APPS = {
     description:
       "PIXORA Play gives families colouring, drawing and puzzle activities with saved creativity and level-based challenges.",
     price: "Free",
-    priceNote: "Optional premium planned",
+    priceNote: "Optional one-time colouring packs",
     image: APP_CARD_IMAGES.play,
     heroImages: HERO_IMAGES.play,
     heroAlt: "PIXORA Play app screen",
@@ -341,7 +341,7 @@ const PIXORA_APPS = {
       { icon: "MZ", label: "Maze puzzles" },
       { icon: "RP", label: "Rope puzzles" },
       { icon: "LP", label: "Local progress" },
-      { icon: "AD", label: "Premium ad-free option" },
+      { icon: "AD", label: "Free core activities" },
     ],
     howItWorks: [
       {
@@ -383,7 +383,7 @@ const PIXORA_APPS = {
     privacyPoints: [
       "Saved artwork",
       "Local progress",
-      "Premium ad-free option",
+      "No ads",
     ],
     carouselTitle: "App screens",
     carouselScreenshots: [
