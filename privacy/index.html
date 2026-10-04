@@ -7,19 +7,19 @@
   <title>Privacy Policy | PIXORA</title>
   <meta
     name="description"
-    content="PIXORA Privacy Policy – PIXORA Play purchases, local artwork and website privacy."
+    content="PIXORA Privacy Policy – PIXORA Play, PIXORA Budget, purchases, local data and website privacy."
   />
   <link rel="canonical" href="https://pixora.es/privacy/" />
 
   <meta property="og:title" content="Privacy Policy | PIXORA" />
-  <meta property="og:description" content="How PIXORA Play and the PIXORA website handle information." />
+  <meta property="og:description" content="How PIXORA Play, PIXORA Budget and the PIXORA website handle information." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://pixora.es/privacy/" />
   <meta property="og:image" content="https://pixora.es/images/pixora-preview.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Privacy Policy | PIXORA" />
-  <meta name="twitter:description" content="How PIXORA Play and the PIXORA website handle information." />
+  <meta name="twitter:description" content="How PIXORA Play, PIXORA Budget and the PIXORA website handle information." />
   <meta name="twitter:image" content="https://pixora.es/images/pixora-preview.png" />
 
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
@@ -45,7 +45,7 @@
     "@type": "WebPage",
     "name": "Privacy Policy | PIXORA",
     "url": "https://pixora.es/privacy/",
-    "description": "PIXORA Privacy Policy – PIXORA Play purchases, local artwork and website privacy.",
+    "description": "PIXORA Privacy Policy – PIXORA Play, PIXORA Budget, purchases, local data and website privacy.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "PIXORA",
@@ -90,13 +90,16 @@
     <div class="legal-container">
       <div class="tag">Legal</div>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: 3 October 2026</p>
-      <p>This policy explains how PIXORA Play and the PIXORA website handle information. The app section describes PIXORA Play’s ad-free version with optional permanent colouring packs. It does not describe PIXORA Budget or PIXORA Track.</p>
+      <p class="legal-meta">Last updated: 4 October 2026</p>
+      <p>This policy explains how PIXORA Play, PIXORA Budget and the PIXORA website handle information. Separate sections describe each app. PIXORA Track is not covered by these app sections.</p>
 
       <h2>Who is responsible</h2>
       <p>Craig Evans, operating as PIXORA, La Línea de la Concepción, Spain.<br />Contact: <a href="mailto:hello@pixora.es">hello@pixora.es</a>.</p>
 
-      <h2>PIXORA Play: a summary for parents</h2>
+      <p><a href="#pixora-play">PIXORA Play</a> · <a href="#pixora-budget">PIXORA Budget</a> · <a href="#website">Website</a></p>
+
+      <section aria-labelledby="pixora-play">
+      <h2 id="pixora-play">PIXORA Play: a summary for parents</h2>
       <p>PIXORA Play is a child-focused colouring, drawing and puzzle app. It has no advertising, subscription or Premium tier. Original content is free; extra colouring packs can be bought once. There is no child account, login, chat or social sharing feature.</p>
       <p>Purchases are presented behind a parent arithmetic check and completed through Google Play. The check is a safeguard against accidental access, not identity verification or a substitute for Google Play purchase authentication.</p>
 
@@ -124,7 +127,45 @@
       <h2>Security</h2>
       <p>RevenueCat uses TLS to protect data in transit. Payment details are handled by Google Play. Protect access to your device and its backups; no storage or transmission method can guarantee absolute security.</p>
 
-      <h2>Website and external pages</h2>
+      </section>
+
+      <section aria-labelledby="pixora-budget">
+      <h2 id="pixora-budget">PIXORA Budget</h2>
+      <p>PIXORA Budget is a personal-finance record-keeping app with free features and an optional Premium subscription. It does not require an account or login and has no advertising or social features. The following describes the Android app; browser differences are noted where relevant.</p>
+
+      <h3>Financial records on your device</h3>
+      <p>Transactions, balances, account names, plans and budgets, investment accounts and movements, gain/loss values, categories, notes, preferences, currencies and manually entered exchange rates are stored locally in the app’s database. Budget does not automatically upload these financial records to PIXORA or RevenueCat. It does not fetch live exchange rates or connect to your bank.</p>
+      <p>Transfers in Budget are bookkeeping entries between accounts you create; they do not move real money. Investment tracking records values and movements you enter and does not execute trades. Budget does not provide banking, lending, brokerage or exchange services.</p>
+
+      <h3>Premium subscriptions and purchase information</h3>
+      <p>Google Play Billing and RevenueCat provide subscription products and localized prices, validate purchases, check Premium access and subscription status, and restore purchases. Google Play handles payment details; PIXORA Budget does not receive your payment-card details.</p>
+      <p>RevenueCat creates an anonymous customer identifier. It processes this identifier, purchase history, purchase tokens, product and subscription information, and entitlement state. Requests also contain technical information such as app and SDK versions, Android version, device model and brand, and language/locale. The services receive network connection information, including an IP address. This purchase information is separate from your personal budgeting ledger.</p>
+      <p>The purchase SDK starts when the Android app opens so previously purchased Premium access can be checked. Network requests can therefore occur without opening the subscription card or making a new purchase. Free features remain usable when the purchase service is unavailable. RevenueCat may use its cached purchase information where available; refreshed subscription status and restoration may need a connection. Purchase information also supports purchase reporting.</p>
+      <p>RevenueCat processes purchase information on PIXORA’s behalf and may process it outside your country, including in the United States, under its contractual data-protection arrangements. See <a href="https://www.revenuecat.com/privacy">RevenueCat’s privacy information</a>, its <a href="https://www.revenuecat.com/dpa">Data Processing Addendum</a>, and <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
+
+      <h3>Recovering purchase access</h3>
+      <p>RevenueCat uses Google Block Store to save an anonymous purchase identifier when purchase history exists, requesting cloud backup where supported. It can retrieve and associate that identifier during restoration to help recover access after reinstalling or changing devices. Availability depends on Google Play services and device/backup settings. This purchase-identifier mechanism does not back up your Budget ledger, exported files or App Lock PIN.</p>
+
+      <h3>App Lock and security</h3>
+      <p>Optional App Lock controls access to Budget. On Android, a salted PIN verifier is encrypted with AES-GCM using an Android Keystore key and stored in the app’s no-backup area. App Lock does not encrypt the financial database itself. The browser version uses a different local-storage PIN mechanism and does not have this Android Keystore protection.</p>
+      <p>RevenueCat protects purchase communications with TLS; Google Play handles payment information. Keep your device and any files you export secure. No storage or transmission method can guarantee absolute security.</p>
+
+      <h3>Android backup and your own exports</h3>
+      <p>Budget intentionally disables normal Android application backup. We cannot guarantee identical behavior for every manufacturer’s device-transfer tools. The separate purchase-identifier recovery described above should not be mistaken for a backup of your financial records.</p>
+      <p>You can export a JSON backup and import a JSON file you select. On Android, export creates a temporary file in the app’s cache and opens the system sharing options. In a browser, it downloads a file. The export function does not encrypt the backup or automatically upload it to PIXORA. If you save or share it elsewhere, its storage, security and retention depend on the destination you choose. Exported copies exist independently of the app; protect them and remove unwanted copies yourself.</p>
+
+      <h3>Information Budget does not request</h3>
+      <p>Budget has no bank login and does not request access to location, contacts, camera, microphone, phone state or your media library. Its own code does not request advertising identifiers or call RevenueCat attribution APIs, and the Android app has no advertising-ID permission. There is no app analytics implementation or startup request to a remote font service. Names or notes you choose to enter in your local finance records stay local unless you export them.</p>
+
+      <h3>Retention, deletion and enquiries</h3>
+      <p>Local records remain until you delete them through app controls, reset the app, clear its data or uninstall it, subject to the device behavior described above. Deleting app data does not remove files you previously exported or saved elsewhere.</p>
+      <p>RevenueCat and Google Play may retain subscription and purchase records to provide access and restoration and meet applicable service, accounting, fraud-prevention or legal requirements. Removing Budget does not cancel a subscription or erase store transaction records. Manage subscription cancellation through Google Play.</p>
+      <p>For access, correction, deletion or other privacy enquiries, contact <a href="mailto:hello@pixora.es">hello@pixora.es</a>. We may need limited purchase information to locate an anonymous purchase record; do not send your PIN, financial backup or payment-card details. We can address records we control, subject to applicable retention requirements, but cannot promise deletion of Google Play records outside our control. Deleting purchase records may affect restoration and does not itself cancel a Google Play subscription. Email enquiries include the email address and information you choose to send.</p>
+      <p>Depending on applicable law, you may also request restriction or portability, object to processing, or withdraw consent where consent applies. You can contact the Spanish Data Protection Authority, <a href="https://www.aepd.es/">AEPD</a>, about a concern.</p>
+      <p>Budget’s Privacy Policy action opens this HTTPS page in a browser. It does not send your financial records or PIN with the link. The website and browser process connection information as described below.</p>
+      </section>
+
+      <h2 id="website">Website and external pages</h2>
       <p>Opening Privacy Policy or Rate PIXORA Play opens an external page. The browser, website host and destination services receive connection information, such as an IP address and browser details. Their processing is separate from local gameplay.</p>
       <p>The PIXORA website contact form sends information you choose to provide to Formspree so we can respond. Email enquiries are used to handle your request and retained as needed for the enquiry and relevant business records. Please see <a href="https://formspree.io/legal/privacy-policy/">Formspree’s privacy policy</a>.</p>
       <p>Other website pages currently load Google Analytics, which can use cookies and process website usage and technical information. This Privacy Policy page does not load Google Analytics. Website pages, including this page, load Poppins from Google Fonts and images from PIXORA’s image host; those requests disclose connection information to the services involved. The Android app does not include this website analytics code. See <a href="https://policies.google.com/privacy">Google’s privacy information</a>.</p>
