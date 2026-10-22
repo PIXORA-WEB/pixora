@@ -2713,8 +2713,8 @@ main:not(.product-page):not(.legal-page)::before {
   display: block;
   width: 100%;
   height: clamp(245px, 26vw, 330px);
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
 }
 
 .app-about-section .pricing-head {
@@ -2946,7 +2946,7 @@ main:not(.product-page):not(.legal-page)::before {
 .app-page-media img {
   position: relative;
   z-index: 1;
-  width: var(--phone-w-main);
+  width: min(var(--phone-w-main), 37svh, 310px);
   max-width: 100%;
   max-height: min(74svh, 620px);
   height: auto;
@@ -3503,7 +3503,7 @@ body.has-screenshot-lightbox {
 .focus-carousel-slide img {
   display: block;
   width: 100%;
-  aspect-ratio: 1480 / 2800;
+  aspect-ratio: 1 / 2;
   height: auto;
   max-width: min(100%, 480px);
   margin: 0 auto;

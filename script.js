@@ -1,24 +1,30 @@
+const SCREENSHOT_WIDTHS = [320, 480, 640, 896];
+const SCREENSHOT_BASE = "https://images.pixora.es/images/pixora-assets/android/v1";
+
 const HERO_IMAGES = {
   budget: [
-    "https://images.pixora.es/images/pixora-assets/hero/budget/budget-1.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/budget/budget-2.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/budget/budget-3.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/budget/budget-4.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/budget/budget-5.webp",
+    `${SCREENSHOT_BASE}/budget/budget-dashboard-480.webp`,
+    `${SCREENSHOT_BASE}/budget/budget-plan-progress-480.webp`,
+    `${SCREENSHOT_BASE}/budget/budget-transactions-480.webp`,
+    `${SCREENSHOT_BASE}/budget/budget-plans-480.webp`,
+    `${SCREENSHOT_BASE}/budget/budget-investments-480.webp`,
+    `${SCREENSHOT_BASE}/budget/budget-settings-480.webp`,
   ],
   track: [
-    "https://images.pixora.es/images/pixora-assets/hero/track/track-1.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/track/track-2.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/track/track-3.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/track/track-4.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/track/track-5.webp",
+    `${SCREENSHOT_BASE}/track/track-dashboard-480.webp`,
+    `${SCREENSHOT_BASE}/track/track-insights-480.webp`,
+    `${SCREENSHOT_BASE}/track/track-transactions-480.webp`,
+    `${SCREENSHOT_BASE}/track/track-cash-profit-480.webp`,
+    `${SCREENSHOT_BASE}/track/track-cash-position-summary-480.webp`,
+    `${SCREENSHOT_BASE}/track/track-settings-480.webp`,
   ],
   play: [
-    "https://images.pixora.es/images/pixora-assets/hero/play/play-1.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/play/play-2.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/play/play-3.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/play/play-4.webp",
-    "https://images.pixora.es/images/pixora-assets/hero/play/play-5.webp",
+    `${SCREENSHOT_BASE}/play/play-home-480.webp`,
+    `${SCREENSHOT_BASE}/play/play-colouring-480.webp`,
+    `${SCREENSHOT_BASE}/play/play-drawing-480.webp`,
+    `${SCREENSHOT_BASE}/play/play-memory-cards-480.webp`,
+    `${SCREENSHOT_BASE}/play/play-maze-480.webp`,
+    `${SCREENSHOT_BASE}/play/play-tangle-rope-480.webp`,
   ],
 };
 
@@ -52,7 +58,7 @@ const PIXORA_APPS = {
     priceNote: "Personal budgeting app",
     image: APP_CARD_IMAGES.budget,
     heroImages: HERO_IMAGES.budget,
-    heroAlt: "PIXORA Budget app screen",
+    heroAlt: "PIXORA Budget dashboard showing available cash, savings, investments and monthly allocation.",
     cta: "Try PIXORA Budget",
     primaryCta: "Try PIXORA Budget",
     ctaUrl: PIXORA_BUDGET_OPEN_TEST_URL,
@@ -136,28 +142,33 @@ const PIXORA_APPS = {
     carouselScreenshots: [
       {
         image: HERO_IMAGES.budget[0],
-        label: "Home / Budget Overview",
-        alt: "PIXORA Budget home screen showing cash balance, available to spend and monthly performance.",
+        label: "Dashboard",
+        alt: "PIXORA Budget dashboard showing available cash, savings, investments and monthly allocation.",
       },
       {
         image: HERO_IMAGES.budget[1],
-        label: "Spending Plans",
-        alt: "PIXORA Budget spending plans screen for tracking planned monthly spending.",
+        label: "Plan Progress",
+        alt: "PIXORA Budget plan progress showing planned, actual and remaining amounts by category.",
       },
       {
         image: HERO_IMAGES.budget[2],
         label: "Transactions",
-        alt: "PIXORA Budget transactions screen for reviewing income, expenses and transfers.",
+        alt: "PIXORA Budget transactions showing spending, income and transfers.",
       },
       {
         image: HERO_IMAGES.budget[3],
-        label: "Investments",
-        alt: "PIXORA Budget investments screen showing investment balances and progress.",
+        label: "Budget Plans",
+        alt: "PIXORA Budget budget plans showing category allocations and active plans.",
       },
       {
         image: HERO_IMAGES.budget[4],
-        label: "Insights & Charts",
-        alt: "PIXORA Budget insights and charts screen showing spending performance.",
+        label: "Investments",
+        alt: "PIXORA Budget investment balances, contributions, withdrawals and gains or losses.",
+      },
+      {
+        image: HERO_IMAGES.budget[5],
+        label: "Settings",
+        alt: "PIXORA Budget settings showing guidance, profile, accounts and currencies.",
       },
     ],
   },
@@ -178,7 +189,7 @@ const PIXORA_APPS = {
     priceNote: "Business finance tracking",
     image: APP_CARD_IMAGES.track,
     heroImages: HERO_IMAGES.track,
-    heroAlt: "PIXORA Track app screen",
+    heroAlt: "PIXORA Track dashboard showing cash balance, available cash, pending outgoings and cash profit.",
     cta: "Try PIXORA Track",
     primaryCta: "Try PIXORA Track",
     ctaUrl: PIXORA_TRACK_OPEN_TEST_URL,
@@ -263,27 +274,32 @@ const PIXORA_APPS = {
       {
         image: HERO_IMAGES.track[0],
         label: "Dashboard",
-        alt: "PIXORA Track dashboard showing cash position, available cash, pending outgoings and performance.",
+        alt: "PIXORA Track dashboard showing cash balance, available cash, pending outgoings and cash profit.",
       },
       {
         image: HERO_IMAGES.track[1],
-        label: "Transactions",
-        alt: "PIXORA Track transactions screen showing business income, expenses and activity.",
+        label: "Insights",
+        alt: "PIXORA Track insights showing a monthly overview and income chart.",
       },
       {
         image: HERO_IMAGES.track[2],
-        label: "Profit & Loss",
-        alt: "PIXORA Track profit and loss screen showing revenue, expenses and net profit.",
+        label: "Transactions",
+        alt: "PIXORA Track transactions showing recorded business income and expenses.",
       },
       {
         image: HERO_IMAGES.track[3],
-        label: "Balance Sheet",
-        alt: "PIXORA Track balance sheet screen showing business financial position.",
+        label: "Cash Profit",
+        alt: "PIXORA Track cash profit report showing income received, expenses and cash profit.",
       },
       {
         image: HERO_IMAGES.track[4],
-        label: "Cash / Banks",
-        alt: "PIXORA Track cash and banks screen showing business bank balances.",
+        label: "Cash Position Summary",
+        alt: "PIXORA Track cash position summary showing recorded assets, obligations and owner position.",
+      },
+      {
+        image: HERO_IMAGES.track[5],
+        label: "Settings",
+        alt: "PIXORA Track settings showing company, financial year, banks and backup options.",
       },
     ],
   },
@@ -304,7 +320,7 @@ const PIXORA_APPS = {
     priceNote: "Optional one-time colouring packs",
     image: APP_CARD_IMAGES.play,
     heroImages: HERO_IMAGES.play,
-    heroAlt: "PIXORA Play app screen",
+    heroAlt: "PIXORA Play home showing colouring, drawing and puzzle activities.",
     cta: "Try PIXORA Play",
     primaryCta: "Try PIXORA Play",
     ctaUrl: PIXORA_PLAY_OPEN_TEST_URL,
@@ -390,34 +406,41 @@ const PIXORA_APPS = {
       {
         image: HERO_IMAGES.play[0],
         label: "Home",
-        alt: "PIXORA Play home screen showing colouring, drawing and puzzle activities.",
+        alt: "PIXORA Play home showing colouring, drawing and puzzle activities.",
       },
       {
         image: HERO_IMAGES.play[1],
         label: "Colouring",
-        alt: "PIXORA Play colouring screen showing themed colouring packs.",
+        alt: "PIXORA Play colouring activity with a partially coloured friendly monster.",
       },
       {
         image: HERO_IMAGES.play[2],
         label: "Drawing",
-        alt: "PIXORA Play drawing screen with brushes, colours and stamps.",
+        alt: "PIXORA Play drawing canvas with a rainbow heart and creative tools.",
       },
       {
         image: HERO_IMAGES.play[3],
         label: "Memory Cards",
-        alt: "PIXORA Play memory cards puzzle screen.",
+        alt: "PIXORA Play Memory Cards showing the level-completion celebration dialog.",
       },
       {
         image: HERO_IMAGES.play[4],
-        label: "Maze / Puzzles",
-        alt: "PIXORA Play puzzle screen showing maze and challenge activities.",
+        label: "Maze",
+        alt: "PIXORA Play Maze activity showing the board and directional controls.",
+      },
+      {
+        image: HERO_IMAGES.play[5],
+        label: "Tangle Rope",
+        alt: "PIXORA Play Tangle Rope activity showing connected nodes to untangle.",
       },
     ],
   },
 };
 
-function pickRandom(items) {
-  return items[Math.floor(Math.random() * items.length)];
+function screenshotSrcset(image) {
+  return SCREENSHOT_WIDTHS.map((width) =>
+    `${image.replace(/-480\.webp$/, `-${width}.webp`)} ${width}w`
+  ).join(", ");
 }
 
 function appList() {
@@ -470,9 +493,13 @@ function renderExternalCta(app, className = "btn-gradient") {
 }
 
 function renderFocusedHeroImage(app, className, sizes, loading = "eager") {
+  // Hidden desktop heroes must not compete with visible content on mobile.
+  const effectiveLoading = className === "app-page-media" && window.matchMedia("(max-width: 768px)").matches
+    ? "lazy" : loading;
+  const shot = app.carouselScreenshots[0];
   return `
     <div class="${className}">
-      <img src="${app.carouselScreenshots[0].image}" srcset="${app.carouselScreenshots[0].image} 1480w" sizes="${sizes}" alt="${app.carouselScreenshots[0].alt}" width="1480" height="2800" loading="${loading}" decoding="async"${loading === "eager" ? " fetchpriority=\"high\"" : ""} />
+      <img src="${shot.image}" srcset="${screenshotSrcset(shot.image)}" sizes="${effectiveLoading === "lazy" ? "auto, " : ""}${sizes}" alt="${shot.alt}" width="896" height="1792" loading="${effectiveLoading}" decoding="async"${effectiveLoading === "eager" ? " fetchpriority=\"high\"" : ""} />
     </div>
   `;
 }
@@ -491,10 +518,10 @@ function renderFocusedProductPage(app) {
             <p class="cta-note">${app.ctaNote}</p>
           </div>
         </div>
-        ${renderFocusedHeroImage(app, "app-page-media", "(max-width: 980px) 320px, 360px")}
+        ${renderFocusedHeroImage(app, "app-page-media", "min(310px, 37svh, clamp(260px, 28vw, 360px))")}
       </section>
 
-      ${renderFocusedHeroImage(app, "app-mobile-phone-section", "(max-width: 768px) 72vw, 1px", "lazy")}
+      ${renderFocusedHeroImage(app, "app-mobile-phone-section", "min(72vw, 340px)", "lazy")}
 
       <section class="app-content-section focus-why-section" id="why">
         <div class="section-head-left">
@@ -552,9 +579,9 @@ function renderFocusedProductPage(app) {
             <span aria-hidden="true">&lsaquo;</span>
           </button>
           <div class="focus-carousel-track" data-carousel-track>
-            ${app.carouselScreenshots.map((shot, index) => `
+            ${app.carouselScreenshots.map((shot) => `
               <figure class="focus-carousel-slide" data-carousel-slide>
-                <img src="${shot.image}" srcset="${shot.image} 1480w" sizes="(max-width: 620px) 300px, (max-width: 980px) 420px, 480px" alt="${shot.alt}" width="1480" height="2800" loading="${index === 0 ? "eager" : "lazy"}" decoding="async"${index === 0 ? " fetchpriority=\"high\"" : ""} />
+                <img src="${shot.image}" srcset="${screenshotSrcset(shot.image)}" sizes="auto, (max-width: 620px) min(300px, calc(100vw - 104px)), min(480px, calc(100vw - 160px))" alt="${shot.alt}" width="896" height="1792" loading="lazy" decoding="async" />
                 <figcaption>${shot.label}</figcaption>
               </figure>
             `).join("")}
@@ -654,19 +681,19 @@ function createHeroPhone(app, position) {
   link.setAttribute("aria-label", app.cta);
 
   const image = document.createElement("img");
-  image.src = pickRandom(app.heroImages);
+  image.srcset = screenshotSrcset(app.image);
+  image.src = app.image;
   image.alt = app.heroAlt;
-  image.width = 1480;
-  image.height = 2800;
-  image.sizes =
-    position === "budget"
-      ? "(max-width: 620px) 42vw, (max-width: 900px) 30vw, 430px"
-      : "(max-width: 620px) 30vw, (max-width: 900px) 24vw, 350px";
+  image.width = 896;
+  image.height = 1792;
+  image.sizes = position === "budget"
+    ? "(max-height: 720px) and (min-width: 901px) clamp(205px, 19vw, 300px), (max-width: 960px) clamp(235px, 34vw, 310px), (max-width: 1100px) clamp(245px, 27vw, 340px), clamp(285px, 29vw, 420px)"
+    : "(max-height: 720px) and (min-width: 901px) clamp(155px, 14.5vw, 225px), (max-width: 960px) clamp(175px, 25vw, 235px), (max-width: 1100px) clamp(190px, 21vw, 265px), clamp(220px, 22vw, 330px)";
   image.decoding = "async";
-  image.loading = "eager";
-  if (position === "budget") {
+  const visibleHero = window.matchMedia("(min-width: 769px)").matches;
+  image.loading = visibleHero ? "eager" : "lazy";
+  if (position === "budget" && visibleHero) {
     image.fetchPriority = "high";
-    image.setAttribute("fetchpriority", "high");
   }
 
   const inner = document.createElement("span");
@@ -740,7 +767,7 @@ function renderAppCards() {
     article.innerHTML = `
       <div class="apple-product-inner">
         <div class="apple-product-media">
-          <img src="${app.image}" alt="${app.heroAlt}" loading="lazy" decoding="async" />
+          <img src="${app.image}" srcset="${screenshotSrcset(app.image)}" sizes="auto, (max-width: 768px) min(340px, calc(100vw - 64px)), (max-width: 1100px) 360px, min(363px, calc((100vw - 88px) / 3))" alt="${app.heroAlt}" width="896" height="1792" loading="lazy" decoding="async" />
         </div>
         <div class="apple-product-copy">
           <div class="product-kicker">${app.name}</div>
