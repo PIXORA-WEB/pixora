@@ -2571,18 +2571,22 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .app-card-list {
+  /* Shared rows: phone, badge, heading, description, three features and CTA. */
   width: min(1180px, calc(100% - 44px));
   margin: 42px auto 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(8, auto);
   align-items: stretch;
   justify-items: center;
   gap: 22px;
+  row-gap: 0;
 }
 
 .apple-product {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: span 8;
+  grid-template-rows: subgrid;
   width: 100%;
   min-width: 0;
   border-radius: 32px;
@@ -2593,7 +2597,8 @@ main:not(.product-page):not(.legal-page)::before {
 
 .apple-product-inner {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-row: span 8;
+  grid-template-rows: subgrid;
   flex: 1;
   min-height: 100%;
 }
@@ -2622,12 +2627,16 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .apple-product-copy {
+  --card-feature-layout: grid;
   max-width: 560px;
   min-height: 0;
-  display: flex;
+  display: grid;
+  grid-row: span 7;
+  grid-template-rows: subgrid;
   flex: 1;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  justify-items: center;
   padding: 28px;
   text-align: center;
 }
@@ -2672,7 +2681,10 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .apple-card-points {
-  display: flex;
+  display: var(--card-feature-layout);
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  justify-items: center;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
@@ -2704,15 +2716,17 @@ main:not(.product-page):not(.legal-page)::before {
 
 .apple-product-media {
   position: relative;
-  display: block;
+  display: grid;
+  place-items: center;
+  padding: 20px 20px 0;
   min-height: 0;
   overflow: hidden;
 }
 
 .apple-product-media img {
   display: block;
-  width: 100%;
-  height: clamp(245px, 26vw, 330px);
+  width: auto;
+  height: clamp(400px, 32vw, 450px);
   object-fit: contain;
   object-position: center;
 }
@@ -2879,7 +2893,8 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .app-page-hero {
-  --phone-w-main: clamp(260px, 28vw, 360px);
+  --phone-w-main: clamp(260px, 28vw, 400px);
+  --hero-phone-height: min(790px, calc(100svh - clamp(96px, 11vh, 132px) - clamp(32px, 6vh, 70px)));
   min-height: 100svh;
   display: grid;
   align-items: center;
@@ -2919,8 +2934,9 @@ main:not(.product-page):not(.legal-page)::before {
 }
 
 .app-page-media {
-  width: min(clamp(520px, 42vw, 760px), 100%);
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: auto;
+  align-self: start;
   max-width: 100%;
   max-height: 100%;
   min-width: 0;
@@ -2946,9 +2962,9 @@ main:not(.product-page):not(.legal-page)::before {
 .app-page-media img {
   position: relative;
   z-index: 1;
-  width: min(var(--phone-w-main), 37svh, 310px);
+  width: min(var(--phone-w-main), calc(var(--hero-phone-height) / 2));
   max-width: 100%;
-  max-height: min(74svh, 620px);
+  max-height: var(--hero-phone-height);
   height: auto;
   border-radius: 36px;
   object-fit: contain;
@@ -3624,17 +3640,23 @@ body.has-screenshot-lightbox {
 
   .app-card-list {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
     width: min(100% - 44px, 720px);
     gap: 26px;
   }
 
   .apple-product {
+    display: flex;
+    flex-direction: column;
+    grid-row: auto;
+    grid-template-rows: none;
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .apple-product-inner {
+    grid-row: auto;
     grid-template-rows: auto auto;
   }
 
@@ -3657,6 +3679,10 @@ body.has-screenshot-lightbox {
   }
 
   .apple-product-copy {
+    --card-feature-layout: flex;
+    display: flex;
+    grid-row: auto;
+    grid-template-rows: none;
     max-width: 620px;
     margin-left: auto;
     margin-right: auto;

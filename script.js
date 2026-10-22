@@ -518,7 +518,7 @@ function renderFocusedProductPage(app) {
             <p class="cta-note">${app.ctaNote}</p>
           </div>
         </div>
-        ${renderFocusedHeroImage(app, "app-page-media", "min(310px, 37svh, clamp(260px, 28vw, 360px))")}
+        ${renderFocusedHeroImage(app, "app-page-media", "min(clamp(260px, 28vw, 400px), 395px, calc((100svh - clamp(96px, 11vh, 132px) - clamp(32px, 6vh, 70px)) / 2))")}
       </section>
 
       ${renderFocusedHeroImage(app, "app-mobile-phone-section", "min(72vw, 340px)", "lazy")}
@@ -767,7 +767,7 @@ function renderAppCards() {
     article.innerHTML = `
       <div class="apple-product-inner">
         <div class="apple-product-media">
-          <img src="${app.image}" srcset="${screenshotSrcset(app.image)}" sizes="auto, (max-width: 768px) min(340px, calc(100vw - 64px)), (max-width: 1100px) 360px, min(363px, calc((100vw - 88px) / 3))" alt="${app.heroAlt}" width="896" height="1792" loading="lazy" decoding="async" />
+          <img src="${app.image}" srcset="${screenshotSrcset(app.image)}" sizes="auto, (max-width: 768px) min(340px, calc(100vw - 64px)), (max-width: 1100px) 360px, clamp(200px, 16vw, 225px)" alt="${app.heroAlt}" width="896" height="1792" loading="lazy" decoding="async" />
         </div>
         <div class="apple-product-copy">
           <div class="product-kicker">${app.name}</div>
